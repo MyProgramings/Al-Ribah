@@ -1,0 +1,37 @@
+form .button {
+  background-color: #fff;
+  color: #1dab6f;
+  border: 1px solid #1dab6f;
+  padding: 2px 30px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  text-decoration: none;
+  font-size: 22px;
+}
+form .button:hover {
+  background-color: #1dab6f;
+  color: #fff;
+}
+
+a.ms-3 {
+  color: #1dab6f;
+}
+
+.social-media-login .login-button {
+  color: #1dab6f;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 25px;
+  transition: all 0.5s;
+}
+.social-media-login .login-button:hover {
+  color: #1dab708c;
+}
+
+@media (max-width: 992px) {
+  body main .vh-100 {
+    height: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=sign.css.map */
