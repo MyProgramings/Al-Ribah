@@ -60,26 +60,26 @@
             </h4>
             <ul class="social-media">
                 <li class="social-media-icon">
-                    <a href="#">
-                        <img src="./images/social_media/Facebook.png" alt="Facebook">
-                    </a>
+                  <a href="#">
+                    <img src="{{ asset('images/social_media/Facebook.png') }}" alt="Facebook">
+                  </a>
                 </li>
                 <li class="social-media-icon">
-                    <a href="#">
-                        <img src="./images/social_media/Instagram.png" alt="Instagram">
-                    </a>
+                  <a href="#">
+                    <img src="{{ asset('images/social_media/Instagram.png') }}" alt="Instagram">
+                  </a>
                 </li>
                 <li class="social-media-icon">
-                    <a href="#">
-                        <img src="./images/social_media/Twitter.png" alt="Twitter">
-                    </a>
+                  <a href="#">
+                    <img src="{{ asset('images/social_media/Twitter.png') }}" alt="Twitter">
+                  </a>
                 </li>
                 <li class="social-media-icon">
-                    <a href="#">
-                        <img src="./images/social_media/YouTube.png" alt="YouTube">
-                    </a>
+                  <a href="#">
+                    <img src="{{ asset('images/social_media/YouTube.png') }}" alt="YouTube">
+                  </a>
                 </li>
-            </ul>
+              </ul>
             <div class="text-center mt-3">
                 <a href="index.html" class="footer-brand">أخباري</a>
             </div>

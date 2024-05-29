@@ -17,7 +17,7 @@
         </div>
 
         <div>
-            <input class="d-none" type="number" id="type" name="type" value="1">
+            <input class="d-none" type="number" id="type" name="type" value="{{ $post_type }}">
             @error('type')
                 <span class="invalid-feedback">
                     <strong>{{ $message }}</strong>

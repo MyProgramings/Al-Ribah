@@ -18,6 +18,15 @@
             </select>
         </div>
 
+        <div>
+            <input type="number" id="type" class="d-none" name="type" value="{{ $post->type }}">
+            @error('type')
+                <span class="invalid-feedback">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
         <label for="title" class="mb-2">عنوان المنشور</label>
         <div class="input-group mb-3">
             <input type="text" id="title" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="حدد عنوان الموضوع" value="{{ $post->title }}">
