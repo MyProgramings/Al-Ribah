@@ -23,9 +23,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(10);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
         $title = "جميع المنشورات";
-        return view('index', compact('posts', 'title'));
+        return view('main', compact('posts', 'title'));
     }
 
     /**
@@ -36,6 +36,12 @@ class PostController extends Controller
     public function create()
     {
         return view('posts.create');
+    }
+
+    public function create_by_type($id)
+    {
+        $post_type = $id;
+        return view('posts.create', compact('post_type'));
     }
 
     /**
@@ -72,9 +78,10 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = $this->post::where('slug', $slug)->first();
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
         $comments = $post->comments->sortByDesc('created_at');
 
-        return view('posts.show', compact('post', 'comments'));
+        return view('article', compact('post', 'posts', 'comments'));
     }
 
     /**

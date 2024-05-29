@@ -15,84 +15,42 @@
                                 aria-label="Slide 4">4</button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <a href="article.html">
-                                    <img src="./images/picture-1.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-text">
-                                        <h3>لوريوم سبيوم: لوريم إيبسوم هو ببساطة نص شكلي</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="article.html">
-                                    <img src="./images/picture-4.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-text">
-                                        <h3>لوريوم سبيوم: لوريم إيبسوم هو ببساطة نص شكلي</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="carousel-item">
-                                <a href="article.html">
-                                    <img src="./images/picture-7.jpg" class="d-block w-100" alt="...">
-                                    <div class="carousel-text">
-                                        <h3>لوريوم سبيوم: لوريم إيبسوم هو ببساطة نص شكلي</h3>
-                                    </div>
-                                </a>
-                            </div>
+                            @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
+                            @foreach ($posts as $post)
+                                <div class="carousel-item active">
+                                    <a href="{{ route('post.show', $post->slug) }}">
+                                        <img src="{{ asset('/storage/images/' . $post->image_path) }}"
+                                            class="d-block w-100" alt="...">
+                                        <div class="carousel-text">
+                                            <h3>{{ $post->title }}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="header-articles">
-                    <a href="article.html" class="article-link">
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="./images/picture-12.jpg" alt="...">
-                            </div>
-                            <div class="col-7">
-                                <div class="article-text">
-                                    <span class="article-category">
-                                        اخبار
-                                    </span>
-                                    <h5 class="article-title">لوريم إيبسوم هو ببساطة نص شكلي ويُستخدم في صناعات
-                                        المطابع ودور النشر حسوب والأكاديمية، لوريوم أيبسويوم</h5>
+                    @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
+                    @foreach ($posts as $post)
+                        <a href="{{ route('post.show', $post->slug) }}" class="article-link">
+                            <div class="row">
+                                <div class="col-5">
+                                    <img src="{{ asset('/storage/images/' . $post->image_path) }}" alt="...">
+                                </div>
+                                <div class="col-7">
+                                    <div class="article-text">
+                                        <span class="article-category">
+                                            {{ __('مشاريع') }}
+                                        </span>
+                                        <h5 class="article-title">{{ $post->title }}</h5>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="article.html" class="article-link">
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="./images/picture-13.jpg" alt="...">
-                            </div>
-                            <div class="col-7">
-                                <div class="article-text">
-                                    <span class="article-category">
-                                        اخبار
-                                    </span>
-                                    <h5 class="article-title">لوريم إيبسوم هو ببساطة نص شكلي ويُستخدم في صناعات
-                                        المطابع ودور النشر حسوب والأكاديمية، لوريوم أيبسويوم</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="article.html" class="article-link">
-                        <div class="row">
-                            <div class="col-5">
-                                <img src="./images/picture-11.jpg" alt="...">
-                            </div>
-                            <div class="col-7">
-                                <div class="article-text">
-                                    <span class="article-category">
-                                        اخبار
-                                    </span>
-                                    <h5 class="article-title">لوريم إيبسوم هو ببساطة نص شكلي ويُستخدم في صناعات
-                                        المطابع ودور النشر حسوب والأكاديمية، لوريوم أيبسويوم</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>
