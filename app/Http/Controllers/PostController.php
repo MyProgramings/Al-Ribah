@@ -78,7 +78,7 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = $this->post::where('slug', $slug)->first();
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(4);
         $comments = $post->comments->sortByDesc('created_at');
 
         return view('article', compact('post', 'posts', 'comments'));

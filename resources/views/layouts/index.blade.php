@@ -32,6 +32,7 @@
 
     <!-- <script src="./js/indexPage/config.js"></script>
     <script src="./js/indexPage/sliderComponent.js"></script> -->
+    <script src="{!! asset('theme/vendor/jquery/jquery.min.js') !!}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/swiper.js"></script>
     <script src="js/index.js"></script>

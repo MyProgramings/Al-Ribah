@@ -7,6 +7,7 @@
     <main>
         @include('parts.section_news')
         @include('parts.section_most_read')
+        @include('parts.structure')
         @include('parts.section_opinions')
         @include('parts.section_videos')
         @include('parts.section_latest_news')
