@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('post.index') }}"><img src="{{ asset('images/Riba.png') }}" style="width: 300px;"
+        <a class="navbar-brand" href="{{ route('post.index') }}"><img src="{{ asset('images/Ribah.png') }}" style="width: 300px;"
                 alt="logo"></a>
         <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

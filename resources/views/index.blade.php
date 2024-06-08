@@ -8,38 +8,59 @@
     </div>
 
     <div class="col-md-8">
-        @includewhen(count($posts) == 0,'alerts.empty',['msg'=>'لا توجد منشورات'])
-        @foreach($posts as $post)
-            <div class="card mb-3">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <img style="float:right" src="{{ $post->user->profile_photo_url }}" width="50px" class="rounded-full"/>
-                            <p class="mt-2 me-3" style="display:inline-block;"><strong>{{$post->user->name}}</strong></p>   
-                            <div class="row mt-2">
-                                <div class="col-3">
-                                    <i class="far fa-clock"></i> <span class="text-secondary">{{$post->created_at->diffForHumans()}}</span>
-                                </div>
-                                <div class="col-3">
-                                    <i class="fa-solid fa-align-justify"></i> <span class="text-secondary">{{$post->category->title}}</span>
-                                </div>
-                                <div class="col-3">
-                                    <i class="fa-solid fa-comment"></i> <span class="text-secondary">{{$post->comments->count()}} تعليقات</span>
-                                </div>
-                            </div>
-                            <h4 class="my-2 h4" ><a href="{{ route('post.show', $post->slug)}}">{{$post->title}}</a></h4>
-                            <p class="card-text mb-2">{!! Str::limit($post->body , 200) !!}</p>
-                        </div>
-                    </div>
+        <div class="data-wrapper">
+            <div class="row">
+                @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
+                @include('data')
+            </div>
+        </div>
+
+        <div class="row text-center" style="padding:20px;">
+            <button class="btn btn-success load-more-data">Load More Data...</button>
+        </div>
+
+        <div class="auto-load text-center" style="display: none;">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                    <span>Loading...</span>
                 </div>
             </div>
-        @endforeach
-
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-            {{ $posts->links() }}
-        </ul>
+        </div>
     </div>
     @include('partials.sidebar')
+@endsection
+@section('script')
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>
+        var ENDPOINT = "{{ route('posts.index') }}";
+        var page = 1;
 
+        $(".load-more-data").click(function() {
+            page++;
+            LoadMore(page);
+        });
+
+        function LoadMore(page) {
+            $.ajax({
+                    url: ENDPOINT + "?page=" + page,
+                    datatype: "html",
+                    type: "get",
+                    beforeSend: function() {
+                        $('.auto-load').show();
+                    }
+                })
+                .done(function(response) {
+                    console.log(response);
+                    if (response.html == '') {
+                        $('.auto-load').html("End :(");
+                        return;
+                    }
+                    $('.auto-load').hide();
+                    $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
+                })
+                .fail(function(jqXHR, ajaxOptions, thrownError) {
+                    console.log('Server error occured');
+                });
+        }
+    </script>
 @endsection
