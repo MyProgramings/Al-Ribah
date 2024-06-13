@@ -153,7 +153,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="most-read">
-                            <h2>الأكثر قراءة</h2>
+                            <h2 class="section-title">الأكثر قراءة</h2>
                             @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
                             @foreach ($posts as $pst)
                                 <a href="#" class="article-link">

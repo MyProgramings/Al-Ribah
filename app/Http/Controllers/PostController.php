@@ -63,7 +63,7 @@ class PostController extends Controller
             $filename = time() . $file->getClientOriginalName();
             $file->storeAs('public/images/',$filename);
         }
-
+        
         $request->user()->posts()->create($request->all() + ['image_path'=>$filename ?? 'default.jpg']);
 
         return back()->with('success', 'تم إضافة المنشور بنجاح، سيظهر بعد أن يوافق عليه المسؤول');

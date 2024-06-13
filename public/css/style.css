@@ -6,12 +6,18 @@
 
 body {
   font-family: "Almarai", sans-serif !important;
+  background-color: #f4f7eb !important;
 }
 
 img {
   width: 100%;
 }
-
+a:hover {
+  text-decoration: none;
+}
+a {
+  text-decoration: none !important;
+}
 .article-category {
   padding: 5px 10px;
   background-color: #1dab6f;
@@ -38,6 +44,9 @@ img {
   margin-right: 30px;
   margin-bottom: 40px;
 }
+.dark-color{
+  color: #f4f7eb !important;
+  }
 .section-title::after {
   content: "";
   position: absolute;
@@ -51,23 +60,31 @@ img {
 .navbar-small {
   padding: 0 !important;
   transition: all 0.5s;
+  background: transparent;
+  backdrop-filter: blur(10px); /* تطبيق تأثير المشوش (blur) */
+}
+
+.logo-style {
+  width: 250px !important;
+  /* height: .1253rem !important; */
 }
 
 header .navbar {
   padding: 10px;
-  border-bottom: 1px solid #B1AEAE;
-  background: transparent;
-  backdrop-filter: blur(10px); /* تطبيق تأثير المشوش (blur) */
+  /* border-bottom: 1px solid #B1AEAE; */
+  /* background-color: #f4f7eb; */
 }
 header .navbar-brand {
   color: #1dab6f;
   font-size: 30px;
+  width: 19.375rem;
 }
 header .navbar .nav-link {
   color: #1dab6f;
   font-size: 20px;
   margin-right: 20px;
   transition: all 0.5s;
+  border-radius: 10px;
 }
 header .navbar .nav-link:hover {
   color: #cb9b45;
@@ -154,7 +171,7 @@ header .navbar form .search-icon i {
   color: #1dab6f;
 }
 header .header-news {
-  margin-top: 50px;
+  margin-top: 65px;
 }
 header .header-news .carousel-news {
   margin-top: 50px;
@@ -237,11 +254,11 @@ section.news .button:hover {
 }
 section.most-read {
   padding: 50px;
-  background-color: #F0F0F0;
+  background-color: #114f39;
 }
 section.most-read .card-news {
   padding: 50px;
-  background-color: #fff;
+  background-color: #f4f7eb;
   margin: 30px;
 }
 section.most-read .card-news a {
@@ -252,10 +269,10 @@ section.most-read .card-news:hover h4 {
   text-decoration: underline;
 }
 section.most-read .card-text h4 {
-  font-size: 30px;
+  /* font-size: 30px; */
 }
 section.most-read .card-text p {
-  font-size: 14px;
+  font-size: 18px;
   margin: 35px auto;
 }
 section.most-read .card-text time {
@@ -313,7 +330,7 @@ section.opinions .opinions-card:hover h5 {
 }
 section.videos {
   padding: 50px;
-  background-color: #000;
+  background-color: #114f39;
 }
 section.videos h2 {
   color: #fff;
@@ -459,6 +476,9 @@ footer .footer-brand {
   .article-category {
     font-size: 14px;
   }
+  header .header-news {
+    margin-top: 85px;
+  }
 }
 @media (max-width: 1200px) {
   header .header-news .carousel-item h3::after {
@@ -477,6 +497,12 @@ footer .footer-brand {
   section.most-read .card-text h4 {
     font-size: 22px;
   }
+  section.most-read .card-text h2 {
+    font-size: 25px;
+  }
+  section.most-read .card-text h5 {
+    font-size: 15px;
+  }
   section.opinions .opinions-card {
     padding: 15px 7px;
   }
@@ -486,8 +512,14 @@ footer .footer-brand {
   .article-title {
     font-size: 14px;
   }
+  header .header-news {
+    margin-top: 75px;
+  }
 }
 @media (max-width: 992px) {
+  header .header-news {
+    margin-top: 80px;
+  }
   header .header-news .carousel-item h3::after {
     display: none;
   }
@@ -504,7 +536,16 @@ footer .footer-brand {
     padding: 25px;
   }
   section.most-read .card-text h4 {
-    font-size: 16px;
+    font-size: 17px;
+  }
+  section.most-read .card-text h2 {
+    font-size: 23px;
+  }
+  section.most-read .card-text h5 {
+    font-size: 13px;
+  }
+  section.opinions .opinions-card {
+    padding: 15px 7px;
   }
   section.most-read .card-text p {
     font-size: 12px;
@@ -537,6 +578,9 @@ footer .footer-brand {
   }
 }
 @media (max-width: 768px) {
+  header .navbar-brand {
+    width: 14.375rem;
+  }
   header .header-news .carousel-news::after {
     display: none;
   }

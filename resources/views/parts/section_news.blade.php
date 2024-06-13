@@ -1,7 +1,7 @@
 <section class="news">
 <div class="container">
     <h2 class="section-title">
-        الأخبار
+        مشاريع وأنشطة الجمعية
     </h2>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
