@@ -1,6 +1,6 @@
-<section class="most-read">
+<section class="most-read" style="padding: 50px 0;">
     <div class="container">
-        <h2 class="section-title">
+        <h2 class="section-title dark-color">
             الهيكل التنظيمي
         </h2>
         <div class="card-news">

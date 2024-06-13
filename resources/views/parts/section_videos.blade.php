@@ -1,6 +1,6 @@
 <section class="videos">
     <div class="container">
-        <h2 class="section-title">
+        <h2 class="section-title dark-color">
             الشركاء
         </h2>
         <div class="swiper">

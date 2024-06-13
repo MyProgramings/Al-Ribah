@@ -3,34 +3,41 @@
         <div class="row">
             <div class="col-lg-7">
                 <div class="carousel-news">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1">1</button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2">2</button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3">3</button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 4">4</button>
-                        </div>
-                        <div class="carousel-inner">
-                            @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
-                            @foreach ($posts as $post)
-                                <div class="carousel-item active">
-                                    <a href="{{ route('post.show', $post->slug) }}">
-                                        <img src="{{ asset('/storage/images/' . $post->image_path) }}"
-                                            class="d-block w-100" alt="...">
-                                        <div class="carousel-text">
-                                            <h3>{{ $post->title }}</h3>
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
+                  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">1</button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">2</button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">3</button>
                     </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <a href="article.html">
+                          <img src="{{ asset('images/co.png') }}" class="d-block w-100" alt="...">
+                          <div class="carousel-text">
+                            <h3>تحسين و تطوير نظام الري المزدوج لزراعة مساحات من أراضي.</h3>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="carousel-item">
+                        <a href="article.html">
+                          <img src="{{ asset('images/co1.png') }}" class="d-block w-100" alt="...">
+                          <div class="carousel-text">
+                            <h3>السعي الستثمار مساهمات االعضاء بما يعود بالنفع عليهم <br>وعلى الجمعية.</h3>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="carousel-item">
+                        <a href="article.html">
+                          <img src="{{ asset('images/co.png') }}" class="d-block w-100" alt="...">
+                          <div class="carousel-text">
+                            <h3>تنظيم اخذ الطين من الواحات (الجروب) وذلك للحفاظ على<br>المنسوب المطلوب لجريان السيول.</h3>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
             <div class="col-lg-5">
                 <div class="header-articles">
                     @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
