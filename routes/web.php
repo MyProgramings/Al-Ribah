@@ -24,7 +24,7 @@ use App\Http\Controllers\PageController;
 Route::get('/search_item', function () {
     return view('search');
 })->name('search_item');
-Route::get('/', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index_blog'])->name('index_blog');
 Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
 Route::resource('/post', PostController::class);
 Route::post('/search', [PostController::class, 'search'])->name('search');

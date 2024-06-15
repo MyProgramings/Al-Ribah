@@ -27,18 +27,18 @@ a {
 .article-title {
   font-size: 20px;
   display: inline;
-  color: #000;
+  color: #114f39;
 }
 .article-link {
   text-decoration: none;
-  color: #000;
+  color: #114f39;
 }
 .article-link:hover .article-title {
   text-decoration: underline;
 }
 
 .section-title {
-  color: #000;
+  color: #114f39;
   line-height: 50px;
   position: relative;
   margin-right: 30px;
@@ -262,7 +262,7 @@ section.most-read .card-news {
   margin: 30px;
 }
 section.most-read .card-news a {
-  color: #000;
+  color: #114f39;
   text-decoration: none;
 }
 section.most-read .card-news:hover h4 {
@@ -300,13 +300,14 @@ section.opinions a {
 }
 section.opinions .opinions-card {
   padding: 20px 10px;
-  background-color: #1dab708c;
+  background-color: #f4f7eb;
+  color: #114f39;
   margin-top: 25px;
   transition: all 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 section.opinions .opinions-card h5 {
   font-size: 16px;
-  color: #000;
   text-align: center;
   font-weight: bold;
 }
@@ -319,14 +320,15 @@ section.opinions .opinions-card .user-info img {
 }
 section.opinions .opinions-card .user-info span {
   font-size: 18px;
-  color: #1dab6f;
   font-weight: bold;
 }
 section.opinions .opinions-card:hover {
-  background-color: #1dab70bb;
+  background-color: #114f39;
+  color: #f4f7eb;
+  box-shadow: none;
 }
 section.opinions .opinions-card:hover h5 {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 section.videos {
   padding: 50px;
@@ -404,7 +406,7 @@ section.latest-news {
 }
 section.latest-news .card-text p {
   margin-top: 10px;
-  color: #000;
+  color: #114f39;
 }
 section.latest-news .button {
   background-color: #1dab6f;
@@ -439,7 +441,7 @@ footer .footer-title::after {
 }
 footer .link-unstyled {
   text-decoration: none;
-  color: #000;
+  color: #114f39;
 }
 footer .social-media {
   list-style: none;
@@ -491,6 +493,9 @@ footer .footer-brand {
     height: 170px;
     top: 100px;
   }
+  header .header-news .header-articles h1 {
+    font-size: 65px !important;
+  }
   section.news .article-link .article-text h5 {
     font-size: 16px;
   }
@@ -525,6 +530,9 @@ footer .footer-brand {
   }
   header .header-news .carousel-indicators {
     left: 0;
+  }
+  header .header-news .header-articles-image {
+    margin-top: 0;
   }
   header .login {
     display: none;

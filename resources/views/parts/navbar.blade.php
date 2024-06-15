@@ -33,7 +33,7 @@
                         <a class="nav-link" href="#">مشاريع</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">مدونة</a>
+                        <a class="nav-link" href="{{ route('index_blog') }}">مدونة</a>
                     </li>
                     <li class="nav-item dropdown" style="list-style: none">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
