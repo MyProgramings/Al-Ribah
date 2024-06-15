@@ -1,6 +1,24 @@
 <div class="header-news">
     <div class="container">
-        <div class="row">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="header-articles">
+                <div class="header-articles">
+                    <h1 style="font-size: 80px; font-weight: bold; color: #114f39;">جمعية الربة</h1>
+                    <h1 style="font-size: 80px; font-weight: bold; color: #114f39;">التعاونية</h1>
+                    <h1 style="font-size: 80px; font-weight: bold; color: #114f39;">الزراعية</h1>
+                </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="header-articles header-articles-image">
+                <div class="header-articles header-articles-image">
+                    <img src="{{ asset('images/readys.png') }}" alt="...">
+                </div>
+          </div>
+        </div>
+      </div>
+        {{-- <div class="row">
             <div class="col-lg-7">
                 <div class="carousel-news">
                   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
@@ -60,6 +78,6 @@
                     @endforeach
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

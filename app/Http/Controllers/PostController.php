@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Helpers\Slug;
+use App\Traits\ImageUploadTrait;
 
 class PostController extends Controller
 {
+    use ImageUploadTrait;
+
     public $post;
 
     public function __construct(Post $post)
@@ -16,23 +19,21 @@ class PostController extends Controller
         $this->post = $post;
         $this->middleware('verified')->only('create');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(10);
         $title = "جميع المنشورات";
         return view('main', compact('posts', 'title'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function index_blog()
+    {
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
+        $title = "جميع المنشورات";
+        return view('index', compact('posts', 'title'));
+    }
+
     public function create()
     {
         return view('posts.create');
@@ -44,12 +45,6 @@ class PostController extends Controller
         return view('posts.create', compact('post_type'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -58,38 +53,26 @@ class PostController extends Controller
             'type' => 'required',
         ]);
 
-        if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . $file->getClientOriginalName();
-            $file->storeAs('public/images/',$filename);
-        }
+        // if($request->hasFile('image')) {
+        //     $file = $request->file('image');
+        //     $filename = time() . $file->getClientOriginalName();
+        //     $file->storeAs('public/images/',$filename);
+        // }
         
-        $request->user()->posts()->create($request->all() + ['image_path'=>$filename ?? 'default.jpg']);
+        $request->user()->posts()->create($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
 
         return back()->with('success', 'تم إضافة المنشور بنجاح، سيظهر بعد أن يوافق عليه المسؤول');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($slug)
     {
         $post = $this->post::where('slug', $slug)->first();
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(4);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(7);
         $comments = $post->comments->sortByDesc('created_at');
 
         return view('article', compact('post', 'posts', 'comments'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $post = $this->post::find($id);
@@ -99,13 +82,6 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $slug)
     {
         $data = $this->validate($request, [
@@ -128,12 +104,6 @@ class PostController extends Controller
         return redirect(route('post.show', $data['slug']))->with('success', 'تم تعديل المنشور بنجاح');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $post = $this->post::find($id);

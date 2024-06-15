@@ -14,12 +14,13 @@
         <style>
             body {
                 font-family: 'Cairo', sans-serif;
-                background-color: #f0f0f0;
+                background-color: #f4f7eb;
+                color: #114f39;
             }
 
             a { 
                 text-decoration: none !important; 
-                color: black;
+                color: #114f39;
             }
 
             ol, ul, menu {

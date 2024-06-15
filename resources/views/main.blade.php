@@ -5,6 +5,7 @@
         @include('parts.news')
     </header>
     <main>
+        @include('parts.section_last_news')
         @include('parts.section_news')
         @include('parts.section_most_read')
         @include('parts.structure')
