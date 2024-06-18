@@ -22,16 +22,16 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(10);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
         $title = "جميع المنشورات";
-        return view('main', compact('posts', 'title'));
+        return view('index', compact('posts', 'title'));
     }
 
     public function index_blog()
     {
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(3);
+        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(10);
         $title = "جميع المنشورات";
-        return view('index', compact('posts', 'title'));
+        return view('main', compact('posts', 'title'));
     }
 
     public function create()
