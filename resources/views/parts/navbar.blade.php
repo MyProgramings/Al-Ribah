@@ -35,33 +35,206 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('index_blog') }}">مدونة</a>
                     </li>
+                    @auth
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                موضوع جديد
+                            </a>
+
+                            <div class="dropdown-menu text-right">
+                                <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
+                                <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
+                                <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
+                            </div>
+                        </li>
+                    @endauth
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <a href="{{ route('search_item') }}" class="search-icon me-2"><i
+                            class="fa-solid fa-magnifying-glass"></i></a>
+                </form>
+                <div class="login">
+                    @guest
+                        <i class="fa-solid fa-user m-0"></i>
+                        <div class="login-container">
+                            <a href="{{ route('login') }}" class="button">تسجيل الدخول</a>
+                            <hr>
+                            <a href="{{ route('register') }}" class="button">إنشاء حساب</a>
+                        </div>
+                    @else
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a id="navbarDropdown" class="nav-link" href="#" data-bs-toggle="dropdown">
+                                <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
+                                    style="clip-path: circle(); width: 40px;" />
+                            </a>
+
+                            <div class="dropdown-menu text-right" style="left: 0; right: auto;">
+                                <div class="pb-1 border-t border-gray-200">
+
+                                    <div class="mt-3 space-y-1">
+                                        <!-- Account Management -->
+                                        @admin
+                                            <a href="{{ route('admin.dashboard') }}" class="dropdown-item">لوحة الإدارة</a>
+                                        @endadmin
+                                        <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
+                                            :active="request()->routeIs('profile')">
+                                            <div class="dropdown-item font-medium text-base text-gray-800">
+                                                {{ Auth::user()->name }}</div>
+                                        </x-jet-responsive-nav-link>
+
+                                        <x-jet-responsive-nav-link class="dropdown-item"
+                                            href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                                            {{ __('الملف الشخصي') }}
+                                        </x-jet-responsive-nav-link>
+
+                                        @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                            <x-jet-responsive-nav-link class="dropdown-item"
+                                                href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                                                {{ __('API Tokens') }}
+                                            </x-jet-responsive-nav-link>
+                                        @endif
+
+                                        <!-- Authentication -->
+                                        <form method="POST" action="{{ route('logout') }}" x-data>
+                                            @csrf
+
+                                            <x-jet-responsive-nav-link href="{{ route('logout') }}" class="dropdown-item"
+                                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                                                {{ __('تسجيل خروج') }}
+                                            </x-jet-responsive-nav-link>
+                                        </form>
+
+                                        <!-- Team Management -->
+                                        @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                                            <div class="border-t border-gray-200"></div>
+
+                                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                                {{ __('Manage Team') }}
+                                            </div>
+
+                                            <!-- Team Settings -->
+                                            <x-jet-responsive-nav-link
+                                                href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
+                                                :active="request()->routeIs('teams.show')">
+                                                {{ __('Team Settings') }}
+                                            </x-jet-responsive-nav-link>
+
+                                            @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                                                <x-jet-responsive-nav-link href="{{ route('teams.create') }}"
+                                                    :active="request()->routeIs('teams.create')">
+                                                    {{ __('Create New Team') }}
+                                                </x-jet-responsive-nav-link>
+                                            @endcan
+
+                                            <div class="border-t border-gray-200"></div>
+
+                                            <!-- Team Switcher -->
+                                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                                {{ __('Switch Teams') }}
+                                            </div>
+
+                                            @foreach (Auth::user()->allTeams() as $team)
+                                                <x-jet-switchable-team :team="$team"
+                                                    component="jet-responsive-nav-link" />
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    @endguest
+                </div>
+                <div class="login-button">
+                    @guest
+                        <a href="{{ route('login') }}" class="button">تسجيل الدخول</a>
+                        <a href="{{ route('register') }}" class="button">إنشاء حساب</a>
+                    @else
                     <li class="nav-item dropdown" style="list-style: none">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            موضوع جديد
+                        <a id="navbarDropdown" class="nav-link" href="#" data-bs-toggle="dropdown">
+                            <img src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}"
+                                style="clip-path: circle(); width: 40px;" />
                         </a>
 
                         <div class="dropdown-menu text-right">
-                            <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
-                            <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
-                            <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
+                            <div class="pb-1 border-t border-gray-200">
+
+                                <div class="mt-3 space-y-1">
+                                    <!-- Account Management -->
+                                    @admin
+                                        <a href="{{ route('admin.dashboard') }}" class="dropdown-item">لوحة الإدارة</a>
+                                    @endadmin
+                                    <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
+                                        :active="request()->routeIs('profile')">
+                                        <div class="dropdown-item font-medium text-base text-gray-800">
+                                            {{ Auth::user()->name }}</div>
+                                    </x-jet-responsive-nav-link>
+
+                                    <x-jet-responsive-nav-link class="dropdown-item"
+                                        href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                                        {{ __('الملف الشخصي') }}
+                                    </x-jet-responsive-nav-link>
+
+                                    @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
+                                        <x-jet-responsive-nav-link class="dropdown-item"
+                                            href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                                            {{ __('API Tokens') }}
+                                        </x-jet-responsive-nav-link>
+                                    @endif
+
+                                    <!-- Authentication -->
+                                    <form method="POST" action="{{ route('logout') }}" x-data>
+                                        @csrf
+
+                                        <x-jet-responsive-nav-link href="{{ route('logout') }}" class="dropdown-item"
+                                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                            {{ __('تسجيل خروج') }}
+                                        </x-jet-responsive-nav-link>
+                                    </form>
+
+                                    <!-- Team Management -->
+                                    @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
+                                        <div class="border-t border-gray-200"></div>
+
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            {{ __('Manage Team') }}
+                                        </div>
+
+                                        <!-- Team Settings -->
+                                        <x-jet-responsive-nav-link
+                                            href="{{ route('teams.show', Auth::user()->currentTeam->id) }}"
+                                            :active="request()->routeIs('teams.show')">
+                                            {{ __('Team Settings') }}
+                                        </x-jet-responsive-nav-link>
+
+                                        @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
+                                            <x-jet-responsive-nav-link href="{{ route('teams.create') }}"
+                                                :active="request()->routeIs('teams.create')">
+                                                {{ __('Create New Team') }}
+                                            </x-jet-responsive-nav-link>
+                                        @endcan
+
+                                        <div class="border-t border-gray-200"></div>
+
+                                        <!-- Team Switcher -->
+                                        <div class="block px-4 py-2 text-xs text-gray-400">
+                                            {{ __('Switch Teams') }}
+                                        </div>
+
+                                        @foreach (Auth::user()->allTeams() as $team)
+                                            <x-jet-switchable-team :team="$team"
+                                                component="jet-responsive-nav-link" />
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </li>
-                </ul>
-                <div class="login">
-                    <i class="fa-solid fa-user"></i>
-                    <div class="login-container">
-                        <a href="./login.html" class="button">تسجيل الدخول</a>
-                    </div>
+                    @endguest
                 </div>
-                <div class="login-button">
-                    <a href="login.html" class="button">تسجيل الدخول</a>
-                </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <a href="{{ route('search_item') }}" class="search-icon"><i
-                            class="fa-solid fa-magnifying-glass"></i></a>
-                </form>
             </div>
         </div>
     </nav>
