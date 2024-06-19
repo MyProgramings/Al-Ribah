@@ -304,10 +304,10 @@ section.opinions .opinions-card {
   color: #114f39;
   margin-top: 25px;
   transition: all 0.5s;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 }
-section.opinions .opinions-card h5 {
-  font-size: 16px;
+section.opinions .opinions-card h6 {
+  font-size: 14px;
   text-align: center;
   font-weight: bold;
 }
@@ -319,7 +319,7 @@ section.opinions .opinions-card .user-info img {
   clip-path: circle();
 }
 section.opinions .opinions-card .user-info span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
 }
 section.opinions .opinions-card:hover {
@@ -424,7 +424,7 @@ section.latest-news .button:hover {
 }
 
 footer {
-  padding-bottom: 50px;
+  padding: 50px 0;
 }
 footer .footer-title {
   margin-bottom: 30px;
@@ -450,7 +450,10 @@ footer .social-media {
 }
 footer .social-media-icon {
   display: inline;
-  margin: 10px;
+  margin-left: 10px;
+}
+footer .social-media-icon a i{
+  font-size: 40px;
 }
 footer .social-media-icon img {
   width: 40px;

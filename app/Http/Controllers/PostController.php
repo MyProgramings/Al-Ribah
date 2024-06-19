@@ -29,9 +29,10 @@ class PostController extends Controller
 
     public function index_blog()
     {
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(10);
+        $posts = $this->post::where('type', 3)->with('user:id,name,profile_photo_path')->approved()->paginate(5);
+        $posts_blog = $this->post::where('type', 1)->with('user:id,name,profile_photo_path')->approved()->paginate(10);
         $title = "جميع المنشورات";
-        return view('main', compact('posts', 'title'));
+        return view('main', compact('posts', 'posts_blog', 'title'));
     }
 
     public function create()

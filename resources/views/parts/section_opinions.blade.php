@@ -4,94 +4,20 @@
             مقالات الرأي
         </h2>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_1.jpg" alt="...">
-                            <span>أحمد محمد</span>
+            @includewhen(count($posts_blog) == 0, 'alerts.empty', ['msg' => 'لا توجد مقالات'])
+            @foreach ($posts_blog as $post_blog)
+                <div class="col-lg-3 col-md-4 col-sm-6 rounded">
+                    <a href="./article.html">
+                        <div class="opinions-card rounded border border-success">
+                            <h6>{!! Str::limit($post_blog->title, 45) !!}</h6>
+                            <div class="user-info mr-3" style="margin-right: 10px;">
+                                <img src="{{ $post_blog->user->profile_photo_url }}" style="width: 50px;" alt="...">
+                                <span>{{ $post_blog->user->name }}</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_7.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_6.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_5.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_4.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_1.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_3.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <a href="./article.html">
-                    <div class="opinions-card">
-                        <h5>لوريم ايبسوم دولار سيت أميت كونسيكتيتور</h5>
-                        <div class="user-info">
-                            <img src="./images/user_img/user_2.jpg" alt="...">
-                            <span>أحمد محمد</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>

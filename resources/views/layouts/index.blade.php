@@ -17,6 +17,7 @@
     <title>الربة</title>
     @yield('style')
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @livewireStyles
 </head>
 
 <body dir="rtl" style="text-align: right;">
@@ -43,6 +44,7 @@
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
     </script>
     @yield('script')
+    @livewireScripts
 </body>
 
 </html>

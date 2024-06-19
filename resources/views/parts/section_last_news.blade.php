@@ -5,7 +5,7 @@
         </h2>
         <div class="swiper">
             <div class="swiper-wrapper">
-                @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
+                @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد أخبار'])
                 @foreach ($posts as $post)
                     <div class="swiper-slide">
                         <a href="{{ route('post.show', $post->slug) }}" class="article-link">
