@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <h4 class="footer-title">
                 من نحن
             </h4>
@@ -19,65 +19,44 @@
                 </li>
             </ul>
         </div>
-        <div class="col-md-3 col-sm-6">
-            <h4 class="footer-title">
-                تواصل معنا
-            </h4>
-            <ul class="list-unstyled">
-                <li class="mt-3">
-                    <a href="#" class="link-unstyled">تواصل معنا</a>
-                </li>
-                <li class="mt-3">
-                    <a href="#" class="link-unstyled">أعلن معنا</a>
-                </li>
-                <li class="mt-3">
-                    <a href="#" class="link-unstyled">وظائف شاغرة</a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <h4 class="footer-title">
                 وسائل التواصل
             </h4>
             <ul class="list-unstyled">
                 <li class="mt-3">
                     <i class="fa-solid fa-location-dot"></i>
-                    مكة المكرمة
+                    شبام/حضرموت
                 </li>
                 <li class="mt-3">
                     <i class="fa-solid fa-phone"></i>
-                    0 341 02251144
+                    <span dir="ltr">+967 779 505 938</span>
                 </li>
                 <li class="mt-3">
                     <i class="fa-solid fa-envelope"></i>
-                    info@mynews.com
+                    support@alribah.com
                 </li>
             </ul>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <h4 class="footer-title">
                 تابعنا على
             </h4>
             <ul class="social-media">
                 <li class="social-media-icon">
-                  <a href="#">
-                    <img src="{{ asset('images/social_media/Facebook.png') }}" alt="Facebook">
-                  </a>
+                    <a href="#" style="color: #339dff"><i class="fa-brands fa-twitter"></i></a>&nbsp&nbsp
                 </li>
                 <li class="social-media-icon">
-                  <a href="#">
-                    <img src="{{ asset('images/social_media/Instagram.png') }}" alt="Instagram">
-                  </a>
+                    <a href="#" style="color: #2079fd"><i class="fa-brands fa-facebook"></i></a>&nbsp&nbsp
                 </li>
                 <li class="social-media-icon">
-                  <a href="#">
-                    <img src="{{ asset('images/social_media/Twitter.png') }}" alt="Twitter">
-                  </a>
+                    <a href="#" style="color: #c22a83"><i class="fa-brands fa-instagram"></i></a>&nbsp&nbsp
                 </li>
                 <li class="social-media-icon">
-                  <a href="#">
-                    <img src="{{ asset('images/social_media/YouTube.png') }}" alt="YouTube">
-                  </a>
+                    <a href="#" style="color: #5fb9ec"><i class="fa-brands fa-telegram"></i></a>&nbsp&nbsp
+                </li>
+                <li class="social-media-icon">
+                    <a href="#" style="color: #3ac56f"><i class="fa-brands fa-whatsapp"></i></a>
                 </li>
               </ul>
             <div class="text-center mt-3">
