@@ -486,6 +486,12 @@ header .login-button {
   header .header-news {
     margin-top: 85px;
   }
+  .login_signup {
+    padding-top: 80px;
+  }
+  .top_padding {
+    padding-top: 50px;
+  }
 }
 @media (max-width: 1200px) {
   header .header-news .carousel-item h3::after {
@@ -524,6 +530,9 @@ header .login-button {
   }
   header .header-news {
     margin-top: 75px;
+  }
+  .img-fluid {
+    width: 500px;
   }
 }
 @media (max-width: 992px) {
@@ -591,6 +600,16 @@ header .login-button {
   }
   .article-title {
     font-size: 18px;
+  }
+  .login_signup {
+    padding-top: 125px;
+  }
+  .top_padding {
+    padding-top: 0;
+    text-align: center;
+  }
+  .img-fluid {
+    display: none;
   }
 }
 @media (max-width: 768px) {
