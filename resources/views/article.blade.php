@@ -52,9 +52,6 @@
                                             </div>
                                         </a>
                                     @endforeach
-                                    <div class="row text-center" style="padding:20px;">
-                                        <button class="btn btn-success load-more-data">Load More Data...</button>
-                                    </div>
                                 </div>
                             </section>
                             <article>
@@ -95,74 +92,20 @@
                                 <hr class="mt-5 mb-5">
                             </section>
                         @endauth
-                        <section class="related-articles">
-                            <h2 class="section-title">
-                                مقالات ذات صلة
-                            </h2>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <a href="article.html" class="article-link">
-                                        <img src="{{ asset('images/picture-12.jpg') }}" alt="...">
-                                        <div class="article-text mt-3">
-                                            <span class="article-category">
-                                                اقتصاد
-                                            </span>
-                                            <h5 class="article-title">
-                                                لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى
-                                                ويُستخدم
-                                            </h5>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-4">
-                                    <a href="article.html" class="article-link">
-                                        <img src="{{ asset('images/picture-10.jpg') }}" alt="...">
-                                        <div class="article-text mt-3">
-                                            <span class="article-category">
-                                                اقتصاد
-                                            </span>
-                                            <h5 class="article-title">
-                                                لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى
-                                                ويُستخدم
-                                            </h5>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-sm-4">
-                                    <a href="article.html" class="article-link">
-                                        <img src="{{ asset('images/picture-15.jpg') }}" alt="...">
-                                        <div class="article-text mt-3">
-                                            <span class="article-category">
-                                                اقتصاد
-                                            </span>
-                                            <h5 class="article-title">
-                                                لوريم إيبسوم هو ببساطة نص شكلي بمعنى أن الغاية هي الشكل وليس المحتوى
-                                                ويُستخدم
-                                            </h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <a href="#" class="btn button">
-                                    المزيد
-                                </a>
-                            </div>
-                            <hr class="mt-4 mb-5">
-                        </section>
+                     
                     </div>
                     <div class="col-md-4">
                         <div class="most-read">
-                            <h2 class="section-title">الأكثر قراءة</h2>
-                            @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
-                            @foreach ($posts as $pst)
+                            <h2 class="section-title">مقالات ذات صلة</h2>
+                            @includewhen(count($related_posts) == 0, 'alerts.empty', ['msg' => 'لا توجد مقالات'])
+                            @foreach ($related_posts as $relate_post)
                                 <a href="#" class="article-link">
                                     <div class="most-read-article">
-                                        <img src="{{ asset('/storage/images/' . $pst->image_path) }}" alt="...">
+                                        <img src="{{ asset('/storage/images/' . $relate_post->image_path) }}" alt="...">
                                         <div class="most-read-text">
-                                            <h4 class="article-title">{{ $pst->title }}</h4>
-                                            <time datetime="01/01/2023">{{ $pst->created_at->locale('ar')->dayName }}
-                                                {{ $pst->created_at->format('d/m/Y') }}</time>
+                                            <h4 class="article-title">{{ $relate_post->title }}</h4>
+                                            <time datetime="01/01/2023">{{ $relate_post->created_at->locale('ar')->dayName }}
+                                                {{ $relate_post->created_at->format('d/m/Y') }}</time>
                                         </div>
                                     </div>
                                 </a>

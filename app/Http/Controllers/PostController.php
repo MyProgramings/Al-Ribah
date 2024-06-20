@@ -68,10 +68,11 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = $this->post::where('slug', $slug)->first();
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(7);
+        $posts = $this->post::where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(4);
+        $related_posts = $this->post::where('category_id', $post->category_id)->where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(3);
         $comments = $post->comments->sortByDesc('created_at');
 
-        return view('article', compact('post', 'posts', 'comments'));
+        return view('article', compact('post', 'posts', 'related_posts', 'comments'));
     }
 
     public function edit($id)
