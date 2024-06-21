@@ -62,7 +62,7 @@
                     @endif
                     <div class="d-flex mt-4">
                         <p class="mb-0">في حال كنت تمتلك حساب يمكنك</p>
-                        <a href="{{ route('signup') }}" class="ms-3">تسجيل الدخول</a>
+                        <a href="{{ route('login') }}" class="ms-3">تسجيل الدخول</a>
                     </div>
                     <div class="d-flex mt-4">
                         <p class="fw-bold mx-3 mb-0 text-muted">

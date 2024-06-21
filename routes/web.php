@@ -10,6 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\PermissionController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,7 @@ Route::group(['prefix' => 'admin',  'middleware' => 'Admin'], function() {
     Route::get('/permission', [PermissionController::class, 'index'])->name('permissions');
     Route::post('/permission', [PermissionController::class, 'store'])->name('permissions');
     Route::resource('/user', UserController::class);
+    Route::resource('/partners', PartnerController::class);
     Route::resource('/page', PageController::class);
 });
 

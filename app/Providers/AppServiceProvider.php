@@ -31,9 +31,13 @@ class AppServiceProvider extends ServiceProvider
     {
         view::composer(['partials.sidebar', 'lists.categories'], CategoryComposer::class);
 
+        view::composer(['parts.sidebar', 'lists.categories'], CategoryComposer::class);
+
         view::composer('lists.roles', RoleComposer::class);
 
         view::composer('partials.sidebar', CommentComposer::class);
+
+        view::composer('parts.sidebar', CommentComposer::class);
 
         view::composer('partials.navbar', PageComposer::class);
 

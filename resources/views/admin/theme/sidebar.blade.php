@@ -56,6 +56,12 @@
           <span>الصلاحيات</span></a>
       </li>
 
+      <li class="nav-item {{ request()->is('admin/partners*') ? 'active' : '' }}">
+        <a class="nav-link text-right" href="{{ route('partners.index') }}">
+        <i class="fas fa-people-arrows"></i>
+          <span>الشركاء</span></a>
+      </li>
+
       <li class="nav-item {{ request()->is('admin/page*') ? 'active' : '' }}">
         <a class="nav-link text-right" href="{{ route('page.index') }}">
         <i class="fas fa-file"></i>

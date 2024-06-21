@@ -4,17 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PartnerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public $partner;
+
+    public function __construct(Partner $partner)
+    {
+        $this->partner = $partner;
+    }
+
     public function index()
     {
-        //
+        return view('admin.partner', ['partners' => $this->partner->all()]);
     }
 
     /**
@@ -35,7 +39,16 @@ class PartnerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'image' => 'required',
+        ]);
+
+        $randomPath = Str::random(16);
+        // $imagePath = $randomPath . '.' . $request->image->getClientOriginalExtension();
+        $path = Storage::put($randomPath, $request->image);
+        $this->partner->create(['image' => $randomPath]);
+
+        return back()->with('success', "تم إضافة الشريك بنجاح");
     }
 
     /**
