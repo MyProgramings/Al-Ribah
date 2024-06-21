@@ -39,8 +39,36 @@
       }
       .sidebar.toggled #sidebarToggle::after {
           content: '\f104';
-
       }
+      input[type=file] {
+                position: absolute !important;
+                width: 100% !important;
+                height: 100% !important;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            .input-title {
+                width: 100%;
+                padding: 35px;
+                background: rgba(255,255,255,0.2);
+                border: 2px dashed rgba(255,255,255,0.2);
+                text-align: center;
+                transition: background 0.3s ease-in-out;
+            }
+
+            .file-area:hover .input-title {
+                background: rgba(255,255,255,0.1);
+            }
+
+            input[type=file] + .input-title {
+                border-color: #f0f0f0;
+                background-color: #f0f0f0;
+            }
   </style>
   @yield('head')
 </head>

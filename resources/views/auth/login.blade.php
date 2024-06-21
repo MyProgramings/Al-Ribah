@@ -34,7 +34,7 @@
                     </form>
                     <div class="d-flex mt-4">
                         <p class="mb-0">في حال كنت لاتمتلك حساب</p>
-                        <a href="{{ route('signup') }}" class="ms-3">إنشاء حساب جديد</a>
+                        <a href="{{ route('register') }}" class="ms-3">إنشاء حساب جديد</a>
                     </div>
                     <div class="d-flex mt-4">
                         <p class="fw-bold mx-3 mb-0 text-muted">

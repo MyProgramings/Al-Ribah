@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             CommentsSeeder::class,
             NotificationSeeder::class,
             AlertSeeder::class,
+            PartnerSeeder::class,
         ]);
     }
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Helpers\Slug;
+use App\Models\Partner;
 use App\Traits\ImageUploadTrait;
 
 class PostController extends Controller
@@ -13,10 +14,12 @@ class PostController extends Controller
     use ImageUploadTrait;
 
     public $post;
+    public $partner;
 
-    public function __construct(Post $post)
+    public function __construct(Post $post, Partner $partner)
     {
         $this->post = $post;
+        $this->partner = $partner;
         $this->middleware('verified')->only('create');
     }
 
@@ -31,8 +34,10 @@ class PostController extends Controller
     {
         $posts = $this->post::where('type', 3)->with('user:id,name,profile_photo_path')->approved()->paginate(5);
         $posts_blog = $this->post::where('type', 1)->with('user:id,name,profile_photo_path')->approved()->paginate(10);
+        $partners = $this->partner->all();
+        // dd($partners);
         $title = "جميع المنشورات";
-        return view('main', compact('posts', 'posts_blog', 'title'));
+        return view('main', compact('posts', 'posts_blog', 'partners', 'title'));
     }
 
     public function create()
@@ -68,10 +73,11 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = $this->post::where('slug', $slug)->first();
-        $posts = $this->post::with('user:id,name,profile_photo_path')->approved()->paginate(7);
+        $posts = $this->post::where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(4);
+        $related_posts = $this->post::where('category_id', $post->category_id)->where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(3);
         $comments = $post->comments->sortByDesc('created_at');
 
-        return view('article', compact('post', 'posts', 'comments'));
+        return view('article', compact('post', 'posts', 'related_posts', 'comments'));
     }
 
     public function edit($id)

@@ -18,6 +18,9 @@ trait ImageUploadTrait
             $img = $manager->read($img);
             $img = $img->resize($this->img_width, $this->img_height)->save(storage_path($this->image_path.'/'.$img_name));
         }
+        else{
+            $img_name = 'Al-Riba.png';
+        }
         return $img_name;
     }
 
