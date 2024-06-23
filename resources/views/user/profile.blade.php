@@ -1,10 +1,10 @@
-@extends('layouts.main')
+@extends('layouts.index')
 
 @section('content')
 <div class="container text-muted">
-    <div class="row mb-4">
+    <div class="row mb-4 make-center">
         <div>
-            <img src="{{ $contents->profile_photo_url }}" width="150px" class="rounded-full mx-auto"/>
+            <img src="{{ $contents->profile_photo_url }}" class="rounded-circle mx-auto" style="width: 150px;"/>
             <h2 class="text-center mt-1">{{ $contents->name }}</h2>
         </div>
     </div>

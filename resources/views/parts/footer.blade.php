@@ -9,13 +9,10 @@
                     <a href="#" class="link-unstyled">من نحن</a>
                 </li>
                 <li class="mt-3">
-                    <a href="#" class="link-unstyled">سياسة الخصوصية</a>
+                    <a href="#" class="link-unstyled">مشاريعنا</a>
                 </li>
                 <li class="mt-3">
-                    <a href="#" class="link-unstyled">الأحكام والشروط</a>
-                </li>
-                <li class="mt-3">
-                    <a href="#" class="link-unstyled">عن المنصة</a>
+                    <a href="#" class="link-unstyled">الاخبار</a>
                 </li>
             </ul>
         </div>

@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container">
             <a class="navbar-brand " id="logo_image" href="{{ route('post.index') }}"><img
-                    src="{{ asset('images/Ribah.png') }}" style="height: auto; max-width: 100%;" alt="logo"></a>
+                    src="{{ asset('images/logo.png') }}" style="height: auto; max-width: 100%;" alt="logo"></a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -27,14 +27,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">أخبار</a>
+                        <a class="nav-link" aria-current="page" href="#">أخبار</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">مشاريع</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('index_blog') }}">مدونة</a>
+                        <a class="nav-link" href="{{ route('about.us') }}">من نحن</a>
                     </li>
+                    {{-- <li class="nav-item">
+                        <a class="nav-link" href="{{ route('index_blog') }}">مدونة</a>
+                    </li> --}}
                     @auth
                         <li class="nav-item dropdown" style="list-style: none">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

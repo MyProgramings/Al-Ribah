@@ -20,6 +20,7 @@
                         <label for="title" class="mb-2">التصنيف</label>
                         <div class="input-group mb-3">
                             <select class="form-select" name="category_id">
+                                <option value=""> اختر تصنيف </option>
                                 @include('lists.categories')
                             </select>
                         </div>

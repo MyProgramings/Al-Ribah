@@ -6,7 +6,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{$comment->user->profile_photo_url}}" width="150px" class="rounded-full"/>
+                        <img src="{{$comment->user->profile_photo_url}}" class="rounded-circle" style="width: 150px;"/>
                     </div>
                     <div class="col-10">
                         @can('delete-post', $comment)
