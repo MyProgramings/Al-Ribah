@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Helpers\Slug;
 use App\Models\Partner;
 use App\Traits\ImageUploadTrait;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -74,8 +75,13 @@ class PostController extends Controller
     {
         $post = $this->post::where('slug', $slug)->first();
         $posts = $this->post::where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(4);
-        $related_posts = $this->post::where('category_id', $post->category_id)->where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(3);
-        $comments = $post->comments->sortByDesc('created_at');
+        if($post){
+            $related_posts = $this->post::where('category_id', $post->category_id)->where('type', 1)->whereNot('slug', $slug)->with('user:id,name,profile_photo_path')->approved()->paginate(3);
+            $comments = $post->comments->sortByDesc('created_at');
+        }else{
+            $related_posts = null;
+            $comments = null;
+        }
 
         return view('article', compact('post', 'posts', 'related_posts', 'comments'));
     }
@@ -115,6 +121,8 @@ class PostController extends Controller
     {
         $post = $this->post::find($id);
 
+        Storage::delete('public/images/'.$post->image_path);
+        
         $post->delete();
 
         return back()->with('success', 'تم حذف المنشور بنجاح');

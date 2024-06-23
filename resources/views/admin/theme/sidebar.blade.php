@@ -1,10 +1,10 @@
     <!-- Sidebar -->
-    <ul class="pr-0 navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="pr-0 navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" style="background-color: #114f39;" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-white" href="/">
         <div class="">
-            CMS HSOUB
+            <img src="{{ asset('images/logo.png') }}" width="100%" alt="">
         </div>
       </a>
 

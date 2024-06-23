@@ -22,22 +22,6 @@ class PartnerController extends Controller
         return view('admin.partner', ['partners' => $this->partner->all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -53,49 +37,11 @@ class PartnerController extends Controller
         return back()->with('success', "تم إضافة الشريك بنجاح");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Partner  $partner
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Partner $partner)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Partner  $partner
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Partner $partner)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Partner  $partner
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Partner $partner)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Partner  $partner
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $partner = $this->partner::find($id);
+
+        Storage::delete('public/images/companies/'.$partner->image);
 
         $partner->delete();
 
