@@ -9,7 +9,7 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> إضافة شريك
-                <form method="post" action="{{ route('partners.store') }}">
+                <form method="post" action="{{ route('partners.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-10">
@@ -50,7 +50,7 @@
                         <td>{{ $partner->image }}</td>
                         <td>{{ $partner->created_at }}</td>
                         <td>
-                        <form method="post" action="{{ route('partners.destroy', $partner->id) }}">
+                        <form method="post" action="{{ route('partners.destroy', $partner->id) }}" onsubmit="return confirm('هل أنت متأكد أنك تريد حذف الشريك هذا؟')">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-link" style="background-color: white;border: none;"><i class="far fa-trash-alt text-danger fa-lg"></i> </button>       

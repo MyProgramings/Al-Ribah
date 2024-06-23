@@ -229,6 +229,13 @@ header .header-news .header-articles .row {
   margin-top: 40px;
 }
 
+.text-muted {
+  padding-top: 130px;
+}
+.text-muted .make-center {
+  text-align: center;
+}
+
 section.news {
   padding: 50px;
 }
@@ -299,6 +306,7 @@ section.opinions a {
   text-decoration: none;
 }
 section.opinions .opinions-card {
+  height: 140px;
   padding: 20px 10px;
   background-color: #f4f7eb;
   color: #114f39;
@@ -307,7 +315,7 @@ section.opinions .opinions-card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
 }
 section.opinions .opinions-card h6 {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
   font-weight: bold;
 }
@@ -332,7 +340,7 @@ section.opinions .opinions-card:hover h5 {
 }
 section.videos {
   padding: 50px;
-  background-color: #114f39;
+  background-color: #fff;
 }
 section.videos h2 {
   color: #fff;

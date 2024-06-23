@@ -5,7 +5,7 @@
         <div class="card mb-3">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 text-right">
                         @if (Auth::check())
                             @can('delete-post', $post)
                                 <form method="POST" action="{{ route('post.destroy', $post->id) }}" onsubmit="return confirm('هل أنت متأكد أنك تريد حذف المنشور هذا؟')">
@@ -24,8 +24,8 @@
                             @endcan
 
                         @endif
-                        <img style="float:right" src="{{ $post->user->profile_photo_url }}" width="50px" class="rounded-full"/>
-                        <p class="mt-2 me-3" style="display:inline-block;"><strong>{{$post->user->name}}</strong></p>   
+                        <img style="float:right; width: 50px;" src="{{ $post->user->profile_photo_url }}" class="rounded-circle"/>
+                        <p class="mt-2 ms-3" style="display:inline-block;"><strong>{{$post->user->name}}</strong></p>   
                         <div class="row mt-2">
                             <div class="col-3">
                                 <i class="far fa-clock"></i> <span class="text-secondary">{{$post->created_at->diffForHumans()}}</span>

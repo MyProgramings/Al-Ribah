@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 class PartnerController extends Controller
 {
     public $partner;
+    protected $image_path  = "app/public/images";
 
     public function __construct(Partner $partner)
     {
@@ -43,11 +44,12 @@ class PartnerController extends Controller
             'image' => 'required',
         ]);
 
-        $randomPath = Str::random(16);
-        // $imagePath = $randomPath . '.' . $request->image->getClientOriginalExtension();
-        $path = Storage::put($randomPath, $request->image);
-        $this->partner->create(['image' => $randomPath]);
-
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = time() .'.'. $file->getClientOriginalExtension();
+            $file->storeAs('public/images/companies/',$filename);
+        }
+        $this->partner->create(['image' => $filename]);
         return back()->with('success', "تم إضافة الشريك بنجاح");
     }
 
@@ -91,8 +93,12 @@ class PartnerController extends Controller
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partner $partner)
+    public function destroy($id)
     {
-        //
+        $partner = $this->partner::find($id);
+
+        $partner->delete();
+
+        return back()->with('success', 'تم حذف الشريك بنجاح');
     }
 }

@@ -26,17 +26,17 @@
                             <input type="password" id="password" class="form-control form-control-lg" name="password"
                                 autocomplete="current-password">
                         </div>
-                        {{-- <div class="form-check mb-4">
+                        <div class="form-check mb-4">
                             <input type="checkbox" id="remember_me" name="remember" class="form-check-input">
                             <label for="remember" class="form-check-label">{{ __('site.remember_me') }}</label>
-                        </div> --}}
+                        </div>
                         <button type="submit" class="btn button">سجل الدخول</button>
                     </form>
                     <div class="d-flex mt-4">
                         <p class="mb-0">في حال كنت لاتمتلك حساب</p>
-                        <a href="{{ route('register') }}" class="ms-3">إنشاء حساب جديد</a>
+                        <a href="{{ route('signup') }}" class="ms-3">إنشاء حساب جديد</a>
                     </div>
-                    {{-- <div class="d-flex mt-4">
+                    <div class="d-flex mt-4">
                         <p class="fw-bold mx-3 mb-0 text-muted">
                             أو يمكنك تسجيل الدخول باستخدام
                         </p>
@@ -48,7 +48,7 @@
                         <a href="#" class="btn login-button" role="button">
                             <i class="fab fa-twitter"></i>
                         </a>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
