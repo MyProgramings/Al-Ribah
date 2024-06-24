@@ -55,6 +55,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'category_id' => 'required',
             'title' => 'required',
             'body' => 'required',
             'type' => 'required',

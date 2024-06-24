@@ -19,10 +19,15 @@
                         @csrf
                         <label for="title" class="mb-2">التصنيف</label>
                         <div class="input-group mb-3">
-                            <select class="form-select" name="category_id">
+                            <select class="form-select @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value=""> اختر تصنيف </option>
                                 @include('lists.categories')
                             </select>
+                            @error('category_id')
+                                <span class="invalid-feedback">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <div>
