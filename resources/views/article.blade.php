@@ -134,37 +134,3 @@
         </div>
     </main>
 @endsection
-@section('script')
-    <script>
-        var ENDPOINT = "{{ route('posts.index') }}";
-        var page = 1;
-
-        $(".load-more-data").click(function() {
-            page++;
-            LoadMore(page);
-        });
-
-        function LoadMore(page) {
-            $.ajax({
-                    url: ENDPOINT + "?page=" + page,
-                    datatype: "html",
-                    type: "get",
-                    beforeSend: function() {
-                        $('.auto-load').show();
-                    }
-                })
-                .done(function(response) {
-                    console.log(response);
-                    if (response.html == '') {
-                        $('.auto-load').html("End :(");
-                        return;
-                    }
-                    $('.auto-load').hide();
-                    $("#data-wrapper").append("<div class='row'>" + response.html + "</div>");
-                })
-                .fail(function(jqXHR, ajaxOptions, thrownError) {
-                    console.log('Server error occured');
-                });
-        }
-    </script>
-@endsection
