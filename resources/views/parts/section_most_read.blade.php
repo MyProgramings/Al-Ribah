@@ -6,11 +6,11 @@
         <div class="card-news">
             <div class="row">
                 <div class="col-md-7">
-                    <img src="{{ asset('images/ribah22.png') }}" alt="...">
+                    <img src="{{ asset('images/shibam1.png') }}" alt="...">
                 </div>
                 <div class="col-md-5">
                     <div class="card-text">
-                        <h2>عضوية جمعية الربة فيِ:</h2>
+                        <h2>عضوية جمعية الربّة فيِ:</h2>
                         <ul>
                             <li>
                                 <h5>مجلس تنسيق منظمات المجتمع المدني.</h5>

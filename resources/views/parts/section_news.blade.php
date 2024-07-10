@@ -7,7 +7,7 @@
         @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
         @foreach ($posts as $post)
         @if ($post->type == 1)
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-4 section-projects">
                 <a href="./article.html" class="article-link">
                     <img src="{{ asset('/storage/images/' . $post->image_path) }}" alt="...">
                     <div class="article-text mt-3">

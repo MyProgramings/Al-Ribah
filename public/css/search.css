@@ -18,6 +18,26 @@
   font-size: 22px;
   margin-right: 25px;
 }
+.search-form .about-section {
+  /* text-align: center; */
+  color: #114f39;
+  /* background: transparent; */
+  /* backdrop-filter: blur(30px); */
+  /* border-top: 6px solid #114f39; */
+  /* border-bottom: 6px solid #114f39; */
+  /* border-radius: 50px; */
+}
+.search-form .about-section h1 {
+  font-size: 70px;
+  
+}
+.search-form .about-section p {
+  font-size: 22px;
+  padding: 5px;
+  background: transparent;
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+}
 .search-form .button:hover {
   background-color: #fff;
   color: #1dab6f;
@@ -101,6 +121,21 @@
   }
   .more-resulte .button {
     font-size: 18px;
+  }
+  .search-form .about-section h1 {
+    padding-top: 60px;
+  }
+  .search-form .about-section p {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .search-form .about-section h1 {
+    padding-top: 80px;
+    font-size: 50px;
+  }
+  .search-form .about-section p {
+    font-size: 17px;
   }
 }
 

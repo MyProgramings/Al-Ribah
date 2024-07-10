@@ -41,7 +41,7 @@
         </ul>
 
         <ul class="navbar-nav mr-auto">
-            <div class="topbar" style="z-index:1">
+            {{-- <div class="topbar" style="z-index:1"> --}}
                 @auth
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow alert-dropdown mx-1" style="list-style: none">
@@ -61,7 +61,7 @@
                         </div>
                     </li>
                 @endauth
-            </div>
+            {{-- </div> --}}
             
             @guest
                 <li class="nav-item my-auto" style="list-style: none">

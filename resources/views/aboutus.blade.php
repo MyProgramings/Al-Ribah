@@ -3,16 +3,30 @@
 @section('content')
     <header>
     </header>
-    <main>
+    <main style="background-image: url('images/Untitled-2.png');height: 650px;
+  /* background-attachment: fixed;   */
+  background-size: cover;">
       <div class="container" style="margin-top: 40px;">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-12">
             <div class="search-form">
-              <form action="./serach.html">
-                <input type="text" placeholder="أبحث هنا ..." required>
-                <button type="submit" class="button">بحث</button>
-              </form>
+              <div class="about-section">
+                <h1>نبذة عن الجمعية</h1>
+                <p>يحيط بشبام التاريخية اراضي زراعية (جروب) تقدر مساحتها 160 فدان من الجهات الشرقية والشمالية والغربية تروى بمياه 
+                  الفيضانات وقد نشأ الاجداد نظام بديع للري يمتد من سد الموزع (5كم) غربي المدينة ويمر بالساقية الرئيسية (ساقية البلاد) ثم سواقي 
+                  فرعية تتفرع الى سواقي (قنوات) فرعية صغيرة لينساب الماء الى الجروب المحاذية للمدينة مزروعة بأشجار النخيل والتي كانت 
+                  تمد السكان بالتمور.</p>
+              </div><br>
+              <div class="about-section">
+                <p>في الماضي القريب اهملت الاراضي الزراعية بسبب العوامل السياسية والاقتصادية ومن هذا المنطلق أوجدت جمعية الربّة عام 
+                  2004 لحماية الاراضي الزراعية من الاندثار والعبث بها والحفاظ على الموروث الزراعي لمدينة شبام التاريخية وكذلك الاستفادة 
+                  منها في تحسين المستوى المعيشي.</p>
+              </div>
             </div>
+          </div>
+        </div>
+        {{-- <div class="row">
+          <div class="col-md-8">
             <div class="search-line">
               <span>أفضل 50 نتيجة</span>
               <div class="ranking">
@@ -135,8 +149,7 @@
         </div>
         <div class="more-resulte text-center">
           <a href="#" class="btn button">المزيد من النتائج</a>
-        </div>
-        <hr>
+        </div> --}}
       </div>
     </main>
 @endsection

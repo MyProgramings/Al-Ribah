@@ -68,7 +68,7 @@
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
                                 <span class="keyword me-3">لوريوم</span>
-                                <span class="keyword me-3">الربة</span>
+                                <span class="keyword me-3">الربّة</span>
                                 <span class="keyword me-3">أبسويوم</span>
                             </article><br>
                         </div>
