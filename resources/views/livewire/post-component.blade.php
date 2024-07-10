@@ -4,12 +4,12 @@
             <h2 class="section-title">
                 مشاريع وأنشطة الجمعية
             </h2>
-            <div class="row">
+            <div class="row section-projects">
                 @includewhen(count($posts_page) == 0, 'alerts.empty', ['msg' => 'لا توجد مشاريع'])
                 @foreach ($posts_page as $post_page)
                     @if ($post_page->type == 2)
                         <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
-                            <a href="./article.html" class="article-link">
+                            <a href="{{ route('post.show', $post_page->slug) }}" class="article-link">
                                 <img src="{{ asset('/storage/images/' . $post_page->image_path) }}" alt="...">
                                 <div class="article-text mt-3">
                                     <span class="article-category">

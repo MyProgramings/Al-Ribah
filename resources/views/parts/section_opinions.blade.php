@@ -8,7 +8,7 @@
             @foreach ($posts_blog as $post_blog)
                 <div class="col-lg-3 col-md-4 col-sm-6 rounded">
                     <a href="{{ route('post.show', $post_blog->slug) }}">
-                        <div class="opinions-card rounded border border-success">
+                        <div class="opinions-card rounded">
                             <h6>{!! Str::limit($post_blog->title, 45) !!}</h6>
                             <div class="user-info mr-3" style="margin-right: 10px;">
                                 <img src="{{ $post_blog->user->profile_photo_url }}" style="width: 50px;" alt="...">

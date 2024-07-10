@@ -57,7 +57,7 @@
                 </li>
               </ul>
             <div class="text-center mt-3">
-                <a href="index.html" class="footer-brand">الربة</a>
+                <a href="index.html" class="footer-brand">الربّة</a>
             </div>
             <div class="copyright text-center mt-3">
                 جميع الحقوق محفوظة @ <span id="year"></span>

@@ -16,18 +16,10 @@
                         <div class="row">
                             @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
                             @include('data')
-                        </div>
-                    </div>
-            
-                    <div class="row text-center" style="padding:20px;">
-                        <button class="btn btn-success load-more-data">Load More Data...</button>
-                    </div>
-            
-                    <div class="auto-load text-center" style="display: none;">
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status">
-                                <span>Loading...</span>
-                            </div>
+                            <!-- Pagination -->
+                            <ul class="pagination mb-4">
+                                {{ $posts->links() }}
+                            </ul>
                         </div>
                     </div>
                 </div>
