@@ -81,7 +81,7 @@
 
 
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f7eb;">
 
       <!-- Main Content -->
       <div id="content">
