@@ -17,8 +17,8 @@
     </div>
     <nav class="navbar navbar-expand-lg" id="navbar">
         <div class="container">
-            <a class="navbar-brand " id="logo_image" href="{{ route('post.index') }}"><img
-                    src="{{ asset('images/logo.png') }}" style="height: auto; max-width: 100%;" alt="logo"></a>
+            <a class="navbar-brand " id="logo_image" href="{{ route('index_blog') }}"><img
+                    src="{{ asset('logo.png') }}" style="height: auto; max-width: 100%;" alt="logo"></a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">

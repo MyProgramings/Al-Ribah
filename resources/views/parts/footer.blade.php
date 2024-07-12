@@ -6,13 +6,13 @@
             </h4>
             <ul class="list-unstyled">
                 <li class="mt-3">
-                    <a href="#" class="link-unstyled">من نحن</a>
+                    <a href="{{ route('about.us') }}" class="link-unstyled">من نحن</a>
                 </li>
                 <li class="mt-3">
-                    <a href="#" class="link-unstyled">مشاريعنا</a>
+                    <a href="{{ route('index_blog') }}" class="link-unstyled">مشاريعنا</a>
                 </li>
                 <li class="mt-3">
-                    <a href="#" class="link-unstyled">الاخبار</a>
+                    <a href="{{ route('index_blog') }}" class="link-unstyled">الاخبار</a>
                 </li>
             </ul>
         </div>

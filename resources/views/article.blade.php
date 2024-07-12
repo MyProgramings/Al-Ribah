@@ -38,7 +38,7 @@
                             @endisset
                             <section class="suggested-stories">
                                 <h2 class="section-title">
-                                    القصص المقترحة
+                                    المقالات المقترحة
                                 </h2>
                                 <div class="stories posts">
                                     @includewhen(count($posts) == 0, 'alerts.empty', [

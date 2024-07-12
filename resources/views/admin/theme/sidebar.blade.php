@@ -1,8 +1,8 @@
     <!-- Sidebar -->
-    <ul class="pr-0 navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" style="background-color: #114f39;" id="accordionSidebar">
+    <ul class="pr-0 navbar-nav sidebar sidebar-dark accordion" style="background-color: #114f39;" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-white" href="/">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center p-0" href="/" style="background-color: #f4f7eb;">
         <div class="">
             <img src="{{ asset('images/logo.png') }}" width="100%" alt="">
         </div>
