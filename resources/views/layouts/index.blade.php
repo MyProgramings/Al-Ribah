@@ -160,8 +160,8 @@
                     $.each(data.someNotifications , function(i, item) {
                         var post_slug = "{{ route('post.show', ':post_slug') }}";
                         post_slug = post_slug.replace(':post_slug', item.post_slug);
-                        resposeNotifications += '<a class="dropdown-item d-flex align-items-center" href='+post_slug+'>\
-                                                    <div class="me-3">\
+                        resposeNotifications += '<a class="dropdown-item d-flex align-items-center px-2" href='+post_slug+'>\
+                                                    <div class="me-2">\
                                                         <div">\
                                                             <img style="float:right; width: 50px;" src='+item.user_image+' width="50px" class="rounded-circle"/>\
                                                         </div>\

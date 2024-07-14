@@ -10,10 +10,10 @@
                     </p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row post-row">
                 <div class="col-md-8">
                     <div class="data-wrapper">
-                        <div class="row">
+                        <div class="row mx-1">
                             @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
                             @include('data')
                             <!-- Pagination -->

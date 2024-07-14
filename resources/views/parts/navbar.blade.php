@@ -53,23 +53,23 @@
                         </li>
                     @endauth
                 </ul>
-                <form class="d-flex" method="post" action="{{ route('search') }}">
+                <form class="d-flex search-small" method="post" action="{{ route('search') }}">
                     @csrf
                     <input class="form-control me-2" name="keyword" type="search" placeholder="ابحث عن..." aria-label="Search">
                     <button type="submit" class="search-icon me-2" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-                <div class="topbar" style="z-index:1">
+                <div class="topbar topbar-notification" style="z-index:1">
                     @auth
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow alert-dropdown mx-1" style="list-style: none;">
-                            <a class="nav-link dropdown-toggle dropdown-toggle-notification" href="#" id="alertsDropdown" role="button"
+                            <a class="nav-link dropdown-toggle dropdown-toggle-notification ms-2" href="#" id="alertsDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw fa-lg"></i>
                                 <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter notif-count" data-count="{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}">{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}</span>
+                                <span class="badge badge-danger badge-counter notif-count rounded-circle" data-count="{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}">{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right text-right mt-2 mr-auto" style="left: 0; right: auto; width: 400px;"
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right text-right mt-2 mr-auto" style="left: 0; right: auto; width: 300px;"
                                 aria-labelledby="alertsDropdown">
                                 <div class="alert-body">
                                         
@@ -171,7 +171,7 @@
                         </li>
                     @endguest
                 </div>
-                <div class="login-button">
+                <div class="login-button mt-2">
                     @guest
                         <a href="{{ route('login') }}" class="button">تسجيل الدخول</a>
                         <a href="{{ route('register') }}" class="button">إنشاء حساب</a>

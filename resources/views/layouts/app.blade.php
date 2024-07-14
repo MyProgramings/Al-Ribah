@@ -20,9 +20,10 @@
         </style>
         <!-- Styles -->
         @livewireStyles
-
+        <link rel="stylesheet" href="{{ asset('build/assets/app.bfe18480.css') }}">
+        <script src="{{ asset('build/assets/app.ed79e0aa.js') }}"></script>
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body class="antialiased" dir="rtl">
         <x-jet-banner />

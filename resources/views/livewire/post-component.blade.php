@@ -4,18 +4,18 @@
             <h2 class="section-title">
                 مشاريع وأنشطة الجمعية
             </h2>
-            <div class="row section-projects">
+            <div class="row section-projects pt-4">
                 @includewhen(count($posts_page) == 0, 'alerts.empty', ['msg' => 'لا توجد مشاريع'])
                 @foreach ($posts_page as $post_page)
                     @if ($post_page->type == 2)
-                        <div class="col-lg-3 col-md-4 col-sm-6 mt-4">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                             <a href="{{ route('post.show', $post_page->slug) }}" class="article-link">
                                 <img src="{{ asset('/storage/images/' . $post_page->image_path) }}" alt="...">
                                 <div class="article-text mt-3">
-                                    <span class="article-category">
+                                    <span class="article-category me-1">
                                         {{ $post_page->category->title }}
                                     </span>
-                                    <h5 class="article-title">{!! Str::limit($post_page->title, 55, '...') !!}</h5>
+                                    <h5 class="article-title">{!! Str::limit($post_page->title, 70, '...') !!}</h5>
                                 </div>
                             </a>
                         </div>
