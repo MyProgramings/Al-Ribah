@@ -62,7 +62,7 @@
                                 </div>
                             </section>
                             <article>
-                                <iframe width="560" height="315"
+                                <iframe class="youtoupy" style="width: 100%; height: 400px;"
                                     src="https://www.youtube.com/embed/3co8f2nLb9I?si=CSIlExbayjSrexQs"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

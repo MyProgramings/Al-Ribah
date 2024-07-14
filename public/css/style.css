@@ -22,7 +22,6 @@ a {
   padding: 5px 10px;
   background-color: #1dab6f;
   color: #fff;
-  margin-left: 10px;
 }
 .article-title {
   font-size: 20px;
@@ -358,7 +357,7 @@ header .header-news .header-articles .row {
 }
 
 section.news {
-  padding: 50px;
+  padding: 50px 0;
 }
 section.news .article-link img {
   max-height: 170px;
@@ -381,7 +380,7 @@ section.news .button:hover {
   color: #1dab6f;
 }
 section.most-read {
-  padding: 50px;
+  padding: 50px 0;
   background-color: #114f39;
 }
 section.most-read .card-news {
@@ -421,14 +420,14 @@ section.most-read .card-img::after {
   right: 80px;
 }
 section.opinions {
-  padding: 50px;
+  padding: 50px 0;
 }
 section.opinions a {
   text-decoration: none;
 }
 section.opinions .opinions-card {
   height: 150px;
-  padding: 20px 10px;
+  padding: 20px 20px;
   background-color: #ffffff;
   color: #114f39;
   margin-top: 25px;
@@ -438,11 +437,11 @@ section.opinions .opinions-card {
 }
 section.opinions .opinions-card h6 {
   font-size: 16px;
-  text-align: center;
+  text-align: right;
   font-weight: bold;
 }
 section.opinions .opinions-card .user-info {
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 section.opinions .opinions-card .user-info img {
   width: 100px;
@@ -461,7 +460,7 @@ section.opinions .opinions-card:hover h5 {
   /* text-decoration: underline; */
 }
 section.videos {
-  padding: 50px;
+  padding: 50px 0;
   background-color: #fff;
 }
 section.videos h2 {
@@ -533,7 +532,8 @@ section.videos .swiper-slide {
   background: #fff !important;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
-  padding-bottom: 10px;
+  margin: 0 10px !important;
+  padding: 0 10px;
   border-radius: 7px;
 }
 section.videos .swiper-pagination {
@@ -611,6 +611,13 @@ footer .footer-brand {
 header .login-button {
   display: none;
 }
+.card-body .row .info-post p {
+  display:inline-block;
+}
+.card-body .row img {
+  float:right;
+  width: 50px;
+}
 @media (max-width: 1400px) {
   header .header-news .carousel-item h3 {
     font-size: 18px;
@@ -664,7 +671,7 @@ header .login-button {
     font-size: 15px;
   }
   section.opinions .opinions-card {
-    padding: 15px 7px;
+    padding: 15px 10px;
   }
   section.opinions .opinions-card .user-info img {
     width: 85px;
@@ -677,6 +684,9 @@ header .login-button {
   }
   .img-fluid {
     width: 500px;
+  }
+  .card-body .row .info-post {
+    padding-right: 25px;
   }
 }
 @media (max-width: 992px) {
@@ -692,11 +702,19 @@ header .login-button {
   header .header-news .header-articles-image {
     margin-top: 0;
   }
+  .topbar-notification {
+    float: left;
+    margin-top: 1rem;
+  }
+  .search-small {
+    margin-right: 20px;
+  }
   header .login {
     display: none;
   }
   header .login-button {
     display: block;
+    float: right;
   }
   header .navbar .login-button .button {
     display: block;
@@ -712,9 +730,6 @@ header .login-button {
   }
   section.most-read .card-text h5 {
     font-size: 13px;
-  }
-  section.opinions .opinions-card {
-    padding: 15px 7px;
   }
   section.most-read .card-text p {
     font-size: 12px;
@@ -755,6 +770,12 @@ header .login-button {
   .img-fluid {
     display: none;
   }
+  .card-body .row img {
+    width: 40px !important;
+  }
+  .card-body .row .info-post {
+    padding-right: 25px;
+  }
 }
 @media (max-width: 768px) {
   header .navbar-brand {
@@ -785,6 +806,68 @@ header .login-button {
   }
   .topbar .dropdown-list .dropdown-item .text-truncate {
     max-width: 13.375rem;
+  }
+  article .youtoupy {
+    height: 300px !important;
+  }
+}
+@media (max-width: 576px) {
+  section.opinions .opinions-card {
+    padding: 20px 25px;
+  }
+  section.opinions .row {
+    margin: 0 0;
+  }
+  section.news .row {
+    margin: 0 0;
+  }
+  #navbar {
+    padding: 10px 0;
+  }
+  .logo-style {
+    width: 14.375rem !important;
+  }
+  .card-posts {
+    /* padding: 20px 20px !important; */
+  }
+  .card-posts-body {
+    padding: 10px 0 !important;
+  }
+  .card-posts-body .row .info-post {
+    padding-right: 15px;
+  }
+  .card-posts-body .row .info-post p {
+    padding-right: 15px;
+  }
+  .card-posts-body .row .info-post .row {
+    font-size: 14px;
+    padding-right: 25px;
+  }
+  .card-posts-body .row .info-post .row i {
+    font-size: 14px;
+  }
+  .card-posts-body .row .info-post .row span {
+    font-size: 13px;
+  }
+  .card-posts-body .row .info-post .row .col-4 {
+    padding: 0;
+  }
+  .card-posts-body .row .photo-post {
+    padding-right: 10px;
+  }
+  .card-posts-body h4 {
+    font-size: 19px;
+  }
+  .card-posts-body p {
+    font-size: 15px;
+  }
+  .col-sm-1 {
+    flex: 0 0 auto !important;
+    width: 8.33333333% !important;
+  }
+  .col-sm-11 {
+    flex: 0 0 auto !important;
+    width: 91.66666667% !important;
   }
 }
 
