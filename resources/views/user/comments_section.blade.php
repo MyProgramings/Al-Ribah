@@ -2,7 +2,7 @@
 
 <div class="commentBody">
     @foreach($contents->comments as $comment)
-        <div class="card mt-5 mb-3">
+        <div class="card mt-5 mb-3 card-posts border-0">
             <div class="card-body">
                 <div class="row">
                     <div class="col-2">
@@ -13,7 +13,7 @@
                             <form method="POST" action="{{ route('comment.destroy', $comment->id) }}" onsubmit="return confirm('هل أنت متأكد أنك تريد حذف التعليق هذا؟')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="float-left"><i class="far fa-trash-alt text-danger fa-lg"></i></button>
+                                <button type="submit" class="float-end border-0 bg-white"><i class="far fa-trash-alt text-danger fa-lg"></i></button>
                             </form>
                         @endcan
                     

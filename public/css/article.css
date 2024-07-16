@@ -72,8 +72,19 @@
 .comments .comment-card {
   margin-top: 25px;
 }
+.comments .comment-card .photo-div{
+  width: auto;
+}
+.comments .comment-card .user-photo {
+  padding-left: 10px;
+}
 .comments .comment-card .user-photo img {
   clip-path: circle();
+  width: 90px;
+}
+.comments .comment-card .user-photo img {
+  clip-path: circle();
+  width: 90px;
 }
 .comments .comment-card .comment-text {
   padding: 20px;
@@ -182,6 +193,9 @@
     font-size: 18px;
     padding: 8px 20px;
   }
+  .comments .comment-card .row{
+    align-items: center;
+  }
   .comments .comment-card .comment-text span {
     font-size: 16px;
   }
@@ -222,6 +236,9 @@
   .most-read .container .card-news h5{
     font-size: 15px;
     /* display: none; */
+  }
+  .comments .comment-card .user-photo img {
+    width: 50px;
   }
 }
 

@@ -43,20 +43,24 @@
                             @endforeach
                         </div>
                     </li>
-                    @admin
-                        <li class="nav-item dropdown" style="list-style: none">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                موضوع جديد
-                            </a>
+                    @if(Auth::check())
+                        {{-- @if (auth::user()->role_id == 1 || auth::user()->role_id == 3) --}}
+                            @can('add-post')
+                                <li class="nav-item dropdown" style="list-style: none">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        موضوع جديد
+                                    </a>
 
-                            <div class="dropdown-menu text-right">
-                                <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
-                                <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
-                                <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
-                            </div>
-                        </li>
-                    @endadmin
+                                    <div class="dropdown-menu text-right">
+                                        <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
+                                        <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
+                                        <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
+                                    </div>
+                                </li>
+                            @endcan
+                        {{-- @endif --}}
+                    @endif
                 </ul>
                 <form class="d-flex search-small" method="post" action="{{ route('search') }}">
                     @csrf

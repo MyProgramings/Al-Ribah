@@ -41,9 +41,15 @@ class AuthServiceProvider extends ServiceProvider
         //      });
         // });
 
-        Permission::whereIn('name', ['edit-post', 'delete-post', 'add-post'])->get()->map(function($per) {
+        Permission::whereIn('name', ['edit-post', 'delete-post'])->get()->map(function($per) {
             Gate::define($per->name, function($user, $post) use ($per) {
                 return $user->hasAllow($per->name) && ($user->id == $post->user_id || $user->isAdmin());
+             });
+        });
+
+        Permission::whereIn('name', ['add-post'])->get()->map(function($per) {
+            Gate::define($per->name, function($user) use ($per) {
+                return $user->hasAllow($per->name);
              });
         });
 
