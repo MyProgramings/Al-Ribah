@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                @include('partials.sidebar')
+                @include('parts.sidebar')
             </div>
         </div>
     </main>

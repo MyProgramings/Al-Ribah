@@ -13,7 +13,7 @@
                 <form method="post" action="{{ route('role.store') }}">
                     @csrf
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-2 mb-1">
                           <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="الاسم">
                           @error('name')
                               <span class="invalid-feedback">
@@ -22,7 +22,7 @@
                           @enderror
                         </div>
 
-                        <div class="col">
+                        <div class="col-md-2 mb-1">
                           <button type="submit" class="btn btn-dark">حفظ </button>
                         </div>
                     </div>

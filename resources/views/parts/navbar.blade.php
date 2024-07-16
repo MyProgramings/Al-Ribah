@@ -7,11 +7,11 @@
                 <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>&nbsp&nbsp
                 <a href="#" class="text-white"><i class="fa-brands fa-telegram"></i></a>&nbsp&nbsp
                 <a href="#" class="text-white"><i class="fa-brands fa-whatsapp"></i></a>
-            </p>
+            </p>    
             <p style="color: white; margin: 0;">
-                &nbsp<a href="#" class="text-white"><i class="fa fa-phone-volume"></i>&nbsp162-800-1324-567</a>
-                &nbsp&nbsp&nbsp<a href="#" class="text-white"><i class="fa fa-map-marker-alt"></i></a>
-                &nbsp&nbsp&nbsp<a href="#" class="text-white"><i class="fa fa-envelope"></i></a>
+                &nbsp<a href="" class="text-white">support@alribbah.org &nbsp<i class="fa fa-envelope"></i></a>
+                &nbsp&nbsp&nbsp<a href="https://maps.app.goo.gl/oAr8cFnJFHVvayxG9" class="text-white"><i class="fa fa-map-marker-alt"></i></a>
+                &nbsp<a href="#" class="text-white"></a>
             </p>
         </div>
     </div>
@@ -26,19 +26,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">أخبار</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">مشاريع</a>
-                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('about.us') }}">من نحن</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('post.index') }}">مدونة</a>
                     </li>
-                    @auth
+                    <li class="nav-item dropdown" style="list-style: none">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            الصفحات
+                        </a>
+        
+                        <div class="dropdown-menu text-right">
+                            @foreach($pages as $page)
+                                <a class="dropdown-item" href="{{ route('page.show',$page->slug ) }}">{{ $page->title }}</a>
+                            @endforeach
+                        </div>
+                    </li>
+                    @admin
                         <li class="nav-item dropdown" style="list-style: none">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -51,15 +56,15 @@
                                 <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
                             </div>
                         </li>
-                    @endauth
+                    @endadmin
                 </ul>
                 <form class="d-flex search-small" method="post" action="{{ route('search') }}">
                     @csrf
-                    <input class="form-control me-2" name="keyword" type="search" placeholder="ابحث عن..." aria-label="Search">
+                    <input class="form-control" name="keyword" type="search" placeholder="ابحث عن..." aria-label="Search">
                     <button type="submit" class="search-icon me-2" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <div class="topbar topbar-notification" style="z-index:1">
-                    @auth
+                    @admin
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow alert-dropdown mx-1" style="list-style: none;">
                             <a class="nav-link dropdown-toggle dropdown-toggle-notification ms-2" href="#" id="alertsDropdown" role="button"
@@ -77,7 +82,7 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="{{ route('all.Notification') }}">عرض جميع الإشعارات</a>
                             </div>
                         </li>
-                    @endauth
+                    @endadmin
                 </div>
                 <div class="login">
                     @guest
@@ -101,12 +106,12 @@
                                         <!-- Account Management -->
                                         @admin
                                             <a href="{{ route('admin.dashboard') }}" class="dropdown-item">لوحة الإدارة</a>
+                                            <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
+                                                :active="request()->routeIs('profile')">
+                                                <div class="dropdown-item font-medium text-base text-gray-800">
+                                                    {{ Auth::user()->name }}</div>
+                                            </x-jet-responsive-nav-link>
                                         @endadmin
-                                        <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
-                                            :active="request()->routeIs('profile')">
-                                            <div class="dropdown-item font-medium text-base text-gray-800">
-                                                {{ Auth::user()->name }}</div>
-                                        </x-jet-responsive-nav-link>
 
                                         <x-jet-responsive-nav-link class="dropdown-item"
                                             href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">

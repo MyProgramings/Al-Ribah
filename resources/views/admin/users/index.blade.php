@@ -14,7 +14,7 @@
                 <form method="post" action="{{ route('user.store') }}">
                   @csrf
                   <div class="row">
-                      <div class="col">
+                      <div class="col-md-2 mb-1">
                         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="الاسم">
                         @error('name')
                             <span class="invalid-feedback">
@@ -22,7 +22,7 @@
                             </span>
                         @enderror
                       </div>
-                      <div class="col">
+                      <div class="col-md-2 mb-1">
                         <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="البريد الإلكتروني">
                         @error('email')
                             <span class="invalid-feedback">
@@ -30,7 +30,7 @@
                             </span>
                         @enderror
                       </div>
-                      <div class="col">
+                      <div class="col-md-2 mb-1">
                         <input type="text" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="كلمة المرور">
                         @error('password')
                             <span class="invalid-feedback">
@@ -38,12 +38,12 @@
                             </span>
                         @enderror
                       </div>
-                      <div class="col">
+                      <div class="col-md-2 mb-1">
                           <select name="role_id" class="form-control">
                               @include('lists.roles')
                           </select>
                       </div>
-                      <div class="col">
+                      <div class="col-md-2 mb-1">
                         <button type="submit" class="btn btn-dark">حفظ </button>
                       </div>
                   </div>

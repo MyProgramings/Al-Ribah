@@ -9,7 +9,7 @@
         @if ($post->type == 1)
             <div class="col-lg-3 col-md-4 col-sm-6 mt-4 section-projects">
                 <a href="./article.html" class="article-link">
-                    <img src="{{ asset('/storage/images/' . $post->image_path) }}" alt="...">
+                    <img src="{{ asset('/storage/posts-images/' . $post->image_path) }}" alt="...">
                     <div class="article-text mt-3">
                         <span class="article-category">
                             {{ $post->category->title }}

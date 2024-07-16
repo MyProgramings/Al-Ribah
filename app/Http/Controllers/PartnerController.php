@@ -10,7 +10,6 @@ use Illuminate\Support\Str;
 class PartnerController extends Controller
 {
     public $partner;
-    protected $image_path  = "app/public/images";
 
     public function __construct(Partner $partner)
     {
@@ -31,7 +30,7 @@ class PartnerController extends Controller
         if($request->hasFile('image')){
             $file = $request->file('image');
             $filename = time() .'.'. $file->getClientOriginalExtension();
-            $file->storeAs('public/images/companies/',$filename);
+            $file->storeAs('public/companies/',$filename);
         }
         $this->partner->create(['image' => $filename]);
         return back()->with('success', "تم إضافة الشريك بنجاح");
@@ -41,7 +40,7 @@ class PartnerController extends Controller
     {
         $partner = $this->partner::find($id);
 
-        Storage::delete('public/images/companies/'.$partner->image);
+        Storage::delete('/public/companies/'.$partner->image);
 
         $partner->delete();
 

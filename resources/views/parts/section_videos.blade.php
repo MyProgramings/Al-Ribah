@@ -9,8 +9,7 @@
                 @foreach ($partners as $partner)
                     <div class="swiper-slide">
                             <div class="slide-img">
-                                <img src="{{ asset('/storage/images/companies/' . $partner->image) }}" alt="...">
-                                {{-- <i class="fa-solid fa-play"></i> --}}
+                                <img src="{{ asset('/storage/companies/' . $partner->image) }}" alt="...">
                             </div>
                     </div>
                 @endforeach

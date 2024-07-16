@@ -1,5 +1,5 @@
 @foreach ($posts as $post)
-    <div class="card mb-3 card-posts">
+    <div class="card mb-3 card-posts border-0">
         <div class="card-body card-posts-body">
             <div class="row">
                 <div class="col-sm-1 photo-post">

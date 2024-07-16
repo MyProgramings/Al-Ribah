@@ -20,7 +20,7 @@
                     <div class="col-md-8">
                         @isset($post)
                             <div class="article-img">
-                                <img src="{{ asset('/storage/images/' . $post->image_path) }}" alt="...">
+                                <img src="{{ asset('/storage/posts-images/' . $post->image_path) }}" alt="...">
                             </div>
                             <div class="article-subtitle">
                                 <span>{{ $post->title }}</span>
@@ -49,7 +49,7 @@
                                             <div class="story-card mt-5">
                                                 <div class="row">
                                                     <div class="col-sm-4">
-                                                        <img src="{{ asset('/storage/images/' . $pst->image_path) }}"
+                                                        <img src="{{ asset('/storage/posts-images/' . $pst->image_path) }}"
                                                             alt="...">
                                                     </div>
                                                     <div class="col-sm-8">
@@ -66,10 +66,7 @@
                                     src="https://www.youtube.com/embed/3co8f2nLb9I?si=CSIlExbayjSrexQs"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-                                <span class="keyword me-3">لوريوم</span>
-                                <span class="keyword me-3">الربّة</span>
-                                <span class="keyword me-3">أبسويوم</span>
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </article><br>
                         </div>
                         @auth
@@ -114,7 +111,7 @@
                                 @foreach ($related_posts as $relate_post)
                                     <a href="#" class="article-link">
                                         <div class="most-read-article">
-                                            <img src="{{ asset('/storage/images/' . $relate_post->image_path) }}"
+                                            <img src="{{ asset('/storage/posts-images/' . $relate_post->image_path) }}"
                                                 alt="...">
                                             <div class="most-read-text">
                                                 <h4 class="article-title">{{ $relate_post->title }}</h4>

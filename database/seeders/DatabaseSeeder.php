@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
             NotificationSeeder::class,
             AlertSeeder::class,
             PartnerSeeder::class,
+            PageSeeder::class,
         ]);
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 
 @section('style')
     <style>
@@ -28,8 +28,8 @@
                     <i class="fa-solid fa-comment"></i> <span class="comment_date text-secondary">{{ $post->comments->count() }} تعليقات</span>
                 </div>
             </div>
-            @if(file_exists(public_path('/storage/images/'.$post->image_path)))
-                <img class="mb-4 mx-auto post-img" src="{{ asset('/storage/images/'.$post->image_path) }}" alt="">
+            @if(file_exists(public_path('/storage/posts-images/'.$post->image_path)))
+                <img class="mb-4 mx-auto post-img" src="{{ asset('/storage/posts-images/'.$post->image_path) }}" alt="">
             @endif
             <p class="lh-lg">{!! $post->body !!}</p>
 
@@ -63,5 +63,5 @@
             @include('comments.all', ['comments' => $comments, 'post_id' => $post->id])
         </div>
     </div>
-    @include('partials.sidebar')
+    @include('parts.sidebar')
 @endsection
