@@ -194,12 +194,12 @@
                                     <!-- Account Management -->
                                     @admin
                                         <a href="{{ route('admin.dashboard') }}" class="dropdown-item">لوحة الإدارة</a>
+                                        <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
+                                            :active="request()->routeIs('profile')">
+                                            <div class="dropdown-item font-medium text-base text-gray-800">
+                                                {{ Auth::user()->name }}</div>
+                                        </x-jet-responsive-nav-link>
                                     @endadmin
-                                    <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
-                                        :active="request()->routeIs('profile')">
-                                        <div class="dropdown-item font-medium text-base text-gray-800">
-                                            {{ Auth::user()->name }}</div>
-                                    </x-jet-responsive-nav-link>
 
                                     <x-jet-responsive-nav-link class="dropdown-item"
                                         href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
