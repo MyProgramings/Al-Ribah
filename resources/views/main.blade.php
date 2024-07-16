@@ -6,13 +6,16 @@
     </header>
     <main>
         @include('parts.section_last_news')
+
         <livewire:post-component /> 
-        {{-- @include('parts.section_news') --}}
+
         @include('parts.section_most_read')
+
         @include('parts.structure')
+
         @include('parts.section_opinions')
+
         @include('parts.section_videos')
-        {{-- @include('parts.section_latest_news') --}}
-        {{-- @include('partials.sidebar') --}}
+
     </main>
 @endsection

@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
 
         view::composer('parts.sidebar', CommentComposer::class);
 
-        view::composer('partials.navbar', PageComposer::class);
+        view::composer('parts.navbar', PageComposer::class);
 
         Blade::if('admin', function () {
             return auth()->check() && auth()->user()->isAdmin();

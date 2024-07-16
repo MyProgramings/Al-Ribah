@@ -31,7 +31,7 @@
                 </li>
                 <li class="mt-3">
                     <i class="fa-solid fa-envelope"></i>
-                    support@alribah.com
+                    support@alribbah.org
                 </li>
             </ul>
         </div>

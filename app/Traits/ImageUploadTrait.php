@@ -6,7 +6,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 trait ImageUploadTrait
 {
-    protected $image_path  = "app/public/images";
+    protected $image_path  = "app/public/posts-images";
     protected $img_height = 600;
     protected $img_width = 900;
 

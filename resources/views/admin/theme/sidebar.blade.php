@@ -4,7 +4,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center p-0" href="/" style="background-color: #f4f7eb;">
         <div class="">
-            <img src="{{ asset('images/logo.png') }}" width="100%" alt="">
+            <img src="{{ asset('logo.png') }}" width="100%" alt="">
         </div>
       </a>
 

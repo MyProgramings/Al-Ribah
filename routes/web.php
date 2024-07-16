@@ -22,14 +22,14 @@ use App\Http\Controllers\PartnerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/search_item', function () {
-    return view('search');
-})->name('search_item');
+// Route::get('/search_item', function () {
+//     return view('search');
+// })->name('search_item');
 Route::get('/', [PostController::class, 'index_blog'])->name('index_blog');
 Route::get('/about-us', function () {
     return view('aboutus');
 })->name('about.us');
-Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
+
 Route::resource('/post', PostController::class);
 Route::post('/search', [PostController::class, 'search'])->name('search');
 Route::get('/category/{id}/{slug}', [PostController::class, 'getByCategory'])->name('category');
@@ -46,6 +46,7 @@ Route::get('user/{id}/comments', [UserController::class, 'getCommentsByUser'])->
 Route::group(['prefix' => 'admin',  'middleware' => 'Admin'], function() { 
     Route::get('/dashboard', [DashController::class, 'index'])->name('admin.dashboard');
     Route::resource('/category', CategoryController::class);
+    Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
     Route::resource('/posts', 'App\Http\Controllers\admin\PostController');
     Route::resource('/role', RoleController::class);
     Route::get('/permission', [PermissionController::class, 'index'])->name('permissions');

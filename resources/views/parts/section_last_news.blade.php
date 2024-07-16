@@ -11,7 +11,7 @@
                         <a href="{{ route('post.show', $post->slug) }}" class="article-link">
                             <div class="row">
                                 <div class="mb-3">
-                                    <img src="{{ asset('/storage/images/' . $post->image_path) }}" alt="...">
+                                    <img src="{{ asset('/storage/posts-images/' . $post->image_path) }}" alt="...">
                                 </div>
                                 <div class="article-text">
                                     <span class="article-category">

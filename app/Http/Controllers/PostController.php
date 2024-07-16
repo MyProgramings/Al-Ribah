@@ -59,12 +59,6 @@ class PostController extends Controller
             'body' => 'required',
             'type' => 'required',
         ]);
-
-        // if($request->hasFile('image')) {
-        //     $file = $request->file('image');
-        //     $filename = time() . $file->getClientOriginalName();
-        //     $file->storeAs('public/images/',$filename);
-        // }
         
         $request->user()->posts()->create($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
 
@@ -109,7 +103,7 @@ class PostController extends Controller
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . $file->getClientOriginalName();
-            $file->storeAs('public/images/', $filename);
+            $file->storeAs('public/posts-images/', $filename);
         }
 
         $request->user()->posts()->where('slug', $slug)->update($data + ['image_path'=> $filename ?? 'default.jpg']);
@@ -121,7 +115,8 @@ class PostController extends Controller
     {
         $post = $this->post::find($id);
 
-        Storage::delete('public/images/'.$post->image_path);
+        if ($post->image_path != 'Al-Riba.png')
+            Storage::delete('/public/posts-images/'.$post->image_path);
         
         $post->delete();
 

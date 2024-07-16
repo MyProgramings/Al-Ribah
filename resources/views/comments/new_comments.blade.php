@@ -1,9 +1,9 @@
 @foreach ($comments as $comment)
     <div class="comment-card">
         <div class="row">
-            <div class="col-lg-2 col-3">
+            <div class="col-lg-2 col-3 photo-div">
                 <div class="user-photo">
-                    <img src="{{$comment->user->profile_photo_url}}" alt="..." style="width: 90px;">
+                    <img src="{{$comment->user->profile_photo_url}}" alt="...">
                 </div>
             </div>
             <div class="col-lg-10 col-9">

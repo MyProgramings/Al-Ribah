@@ -1,6 +1,6 @@
 <div class="col-md-4">
-    <div class="card">
-        <h5 class="card-header">التصنيفات</h5>
+    <div class="card border-0" style="-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);">
+        <h5 class="card-header border-0">التصنيفات</h5>
         <div class="card-body">
             <ul class="nav flex-column p-0" style="list-style: none !important;">
                 <li class="nav-item">
@@ -16,8 +16,8 @@
     </div>
 
     <!-- Side Widget -->
-    <div class="card my-4 text-right">
-        <h5 class="card-header">آخر التعليقات</h5>
+    <div class="card my-4 text-right border-0" style="-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);">
+        <h5 class="card-header border-0">آخر التعليقات</h5>
         <ul class="list-group p-0">
             @foreach($recent_comments as $comment)
                 <li class="list-group-item">

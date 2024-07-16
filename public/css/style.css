@@ -76,7 +76,7 @@ header .navbar {
 header .navbar-brand {
   color: #1dab6f;
   font-size: 30px;
-  width: 19.375rem;
+  width: 17.375rem;
 }
 header .navbar .nav-link {
   color: #1dab6f;
@@ -359,9 +359,7 @@ header .header-news .header-articles .row {
 section.news {
   padding: 50px 0;
 }
-section.news .article-link img {
-  max-height: 170px;
-}
+
 section.news .article-link .article-text h5 {
   font-size: 18px;
 }
@@ -387,6 +385,15 @@ section.most-read .card-news {
   padding: 50px;
   background-color: #f4f7eb;
   margin: 30px;
+}
+.card-posts {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+.list-group-item {
+  border-left: 0px !important;
+  border-right: 0px !important;
+  border-top: 0px !important;
 }
 section.most-read .card-news a {
   color: #114f39;
@@ -618,6 +625,12 @@ header .login-button {
   float:right;
   width: 50px;
 }
+.d-lg-inline {
+    display: inline !important;
+}
+.login_signup {
+  padding-top: 150px;
+}
 @media (max-width: 1400px) {
   header .header-news .carousel-item h3 {
     font-size: 18px;
@@ -628,6 +641,7 @@ header .login-button {
   header .header-news .carousel-indicators {
     left: -500px;
   }
+  
   .article-title {
     font-size: 18px;
   }
@@ -638,13 +652,16 @@ header .login-button {
     margin-top: 85px;
   }
   .login_signup {
-    padding-top: 80px;
+    padding-top: 125px;
   }
   .top_padding {
     padding-top: 50px;
   }
 }
 @media (max-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1400px !important;
+  }
   header .header-news .carousel-item h3::after {
     left: 340px;
   }
@@ -714,6 +731,8 @@ header .login-button {
   }
   header .login-button {
     display: block;
+  }
+  header .login-button .nav-item {
     float: right;
   }
   header .navbar .login-button .button {
@@ -826,9 +845,6 @@ header .login-button {
   }
   .logo-style {
     width: 14.375rem !important;
-  }
-  .card-posts {
-    /* padding: 20px 20px !important; */
   }
   .card-posts-body {
     padding: 10px 0 !important;

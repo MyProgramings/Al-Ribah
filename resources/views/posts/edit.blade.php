@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.index')
 
 @section('content')
 <div class="col-md-12">
@@ -53,7 +53,7 @@
             <div class="input-title">اسحب الصورة إلى هنا أو انقر للاختيار يدويًا</div>
         </div>
         <div class="row">
-            <img id="cover-image-thumb" src="{{ asset('/storage/images/'.$post->image_path) }}" class="col-2" width="100" height="100"> 
+            <img id="cover-image-thumb" src="{{ asset('/storage/posts-images/'.$post->image_path) }}" class="col-2" width="100" height="100"> 
             <span class="input-name col-6"></span>
         </div>
 
@@ -62,7 +62,7 @@
      </form>
 </div>
 
-    @include('partials.sidebar')
+    @include('parts.sidebar')
 
 @endsection
 

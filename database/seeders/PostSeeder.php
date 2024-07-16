@@ -25,7 +25,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 1,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png'
+            'image_path' => 'Al-Riba.png'
         ]);
 
         DB::table('posts')->insert([
@@ -43,7 +43,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 3,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -63,7 +63,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -80,7 +80,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -93,7 +93,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 1,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png'
+            'image_path' => 'Al-Riba.png'
         ]);
 
         DB::table('posts')->insert([
@@ -111,7 +111,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 3,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -131,7 +131,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -148,7 +148,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -161,7 +161,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 1,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png'
+            'image_path' => 'Al-Riba.png'
         ]);
 
         DB::table('posts')->insert([
@@ -179,7 +179,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 3,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -199,7 +199,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
 
         DB::table('posts')->insert([
@@ -216,7 +216,7 @@ class PostSeeder extends Seeder
             'approved' => true,
             'category_id' => 2,
             'created_at' => '2024-06-27 05:08:00',
-            'image_path' => 'example.png',
+            'image_path' => 'Al-Riba.png',
         ]);
         // DB::table('posts')->insert([
         //     'title' => "",
@@ -227,7 +227,7 @@ class PostSeeder extends Seeder
         //     'approved' => true,
         //     'category_id' => 2,
         //     'created_at' => '2024-06-27 05:08:00',
-        //     'image_path' => 'example.png',
+        //     'image_path' => 'Al-Riba.png',
         // ]);
     }
 }
