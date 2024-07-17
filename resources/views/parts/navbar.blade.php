@@ -44,7 +44,6 @@
                         </div>
                     </li>
                     @if(Auth::check())
-                        {{-- @if (auth::user()->role_id == 1 || auth::user()->role_id == 3) --}}
                             @can('add-post')
                                 <li class="nav-item dropdown" style="list-style: none">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -59,7 +58,6 @@
                                     </div>
                                 </li>
                             @endcan
-                        {{-- @endif --}}
                     @endif
                 </ul>
                 <form class="d-flex search-small" method="post" action="{{ route('search') }}">
