@@ -2,11 +2,11 @@
     <div style="background-color: #114f39; padding: 2px 0;">
         <div class="container">
             <p style="float: left; color: white; margin: 0;">
-                <a href="#" class="text-white"><i class="fa-brands fa-twitter"></i></a>&nbsp&nbsp
-                <a href="#" class="text-white"><i class="fa-brands fa-facebook"></i></a>&nbsp&nbsp
-                <a href="#" class="text-white"><i class="fa-brands fa-instagram"></i></a>&nbsp&nbsp
-                <a href="#" class="text-white"><i class="fa-brands fa-telegram"></i></a>&nbsp&nbsp
-                <a href="#" class="text-white"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://x.com/JBshbam79597" class="text-white"><i class="fa-brands fa-twitter"></i></a>&nbsp&nbsp
+                <a href="https://www.facebook.com/profile.php?id=61560878338105&mibextid=ZbWKwL" class="text-white"><i class="fa-brands fa-facebook"></i></a>&nbsp&nbsp
+                <a href="https://www.instagram.com/alribbah/" class="text-white"><i class="fa-brands fa-instagram"></i></a>&nbsp&nbsp
+                {{-- <a href="#" class="text-white"><i class="fa-brands fa-telegram"></i></a>&nbsp&nbsp --}}
+                <a href="https://chat.whatsapp.com/GVUxmP5dh6oHgUFwUO1tjQ" class="text-white"><i class="fa-brands fa-whatsapp"></i></a>
             </p>    
             <p style="color: white; margin: 0;">
                 &nbsp<a href="" class="text-white">support@alribbah.org &nbsp<i class="fa fa-envelope"></i></a>
@@ -39,26 +39,31 @@
         
                         <div class="dropdown-menu text-right">
                             @foreach($pages as $page)
-                                <a class="dropdown-item" href="{{ route('page.show',$page->slug ) }}">{{ $page->title }}</a>
+                                <a class="dropdown-item" href="{{ route('page.nav.show',$page->slug ) }}">{{ $page->title }}</a>
                             @endforeach
                         </div>
                     </li>
-                    @if(Auth::check())
-                            @can('add-post')
-                                <li class="nav-item dropdown" style="list-style: none">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        موضوع جديد
-                                    </a>
+                    {{-- @auth
+                        <li class="nav-item" style="list-style: none">
+                            <a class="nav-link" href="{{ route('post.create') }}"><i class="fa fa-plus fa-fw"></i>موضوع جديد</a>
+                        </li>
+                    @endauth --}}
+                    @auth
+                        @can('add-post')
+                            <li class="nav-item dropdown" style="list-style: none">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    موضوع جديد
+                                </a>
 
-                                    <div class="dropdown-menu text-right">
-                                        <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
-                                        <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
-                                        <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
-                                    </div>
-                                </li>
-                            @endcan
-                    @endif
+                                <div class="dropdown-menu text-right">
+                                    <a class="dropdown-item" href="{{ route('post.create.new', 1) }}">منشور</a>
+                                    <a class="dropdown-item" href="{{ route('post.create.new', 2) }}">مشروع</a>
+                                    <a class="dropdown-item" href="{{ route('post.create.new', 3) }}">اخبار</a>
+                                </div>
+                            </li>
+                        @endcan
+                    @endauth
                 </ul>
                 <form class="d-flex search-small" method="post" action="{{ route('search') }}">
                     @csrf
@@ -66,25 +71,29 @@
                     <button type="submit" class="search-icon me-2" style="border: none; background: none;"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <div class="topbar topbar-notification" style="z-index:1">
-                    @admin
-                        <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow alert-dropdown mx-1" style="list-style: none;">
-                            <a class="nav-link dropdown-toggle dropdown-toggle-notification ms-2" href="#" id="alertsDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw fa-lg"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter notif-count rounded-circle" data-count="{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}">{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right text-right mt-2 mr-auto" style="left: 0; right: auto; width: 300px;"
-                                aria-labelledby="alertsDropdown">
-                                <div class="alert-body">
-                                        
-                                </div>
-                                <a class="dropdown-item text-center small text-gray-500" href="{{ route('all.Notification') }}">عرض جميع الإشعارات</a>
-                            </div>
-                        </li>
-                    @endadmin
+                    @auth
+                        @can('add-post')
+                            @isset(App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert)
+                                <!-- Nav Item - Alerts -->
+                                <li class="nav-item dropdown no-arrow alert-dropdown mx-1" style="list-style: none;">
+                                    <a class="nav-link dropdown-toggle dropdown-toggle-notification ms-2" href="#" id="alertsDropdown" role="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bell fa-fw fa-lg"></i>
+                                        <!-- Counter - Alerts -->
+                                        <span class="badge badge-danger badge-counter notif-count rounded-circle" data-count="{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}">{{ App\Models\Alert::where('user_id', Auth::user()->id)->first()->alert }}</span>
+                                    </a>
+                                    <!-- Dropdown - Alerts -->
+                                    <div class="dropdown-list dropdown-menu dropdown-menu-right text-right mt-2 mr-auto" style="left: 0; right: auto; width: 300px;"
+                                        aria-labelledby="alertsDropdown">
+                                        <div class="alert-body">
+                                                
+                                        </div>
+                                        <a class="dropdown-item text-center small text-gray-500" href="{{ route('all.Notification') }}">عرض جميع الإشعارات</a>
+                                    </div>
+                                </li>
+                            @endisset
+                        @endcan
+                    @endauth
                 </div>
                 <div class="login">
                     @guest
@@ -108,13 +117,14 @@
                                         <!-- Account Management -->
                                         @admin
                                             <a href="{{ route('admin.dashboard') }}" class="dropdown-item">لوحة الإدارة</a>
+                                        @endadmin
+                                        @can('add-post')
                                             <x-jet-responsive-nav-link href="{{ route('profile', Auth::user()->id) }}"
                                                 :active="request()->routeIs('profile')">
                                                 <div class="dropdown-item font-medium text-base text-gray-800">
                                                     {{ Auth::user()->name }}</div>
                                             </x-jet-responsive-nav-link>
-                                        @endadmin
-
+                                        @endcan
                                         <x-jet-responsive-nav-link class="dropdown-item"
                                             href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                             {{ __('الملف الشخصي') }}
