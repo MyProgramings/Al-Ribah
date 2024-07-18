@@ -5,10 +5,12 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Traits\ImageUploadTrait;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
+    use ImageUploadTrait;
     public function __construct(Post $post)
     {
         $this->post = $post;
@@ -30,15 +32,19 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
+        $post = $this->post::find($id);
+        
         $request['approved'] = $request->has('approved');
 
         if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . $file->getClientOriginalName();
-            $file->storeAs('public/images/', $filename);
+            if($post->image_path != 'Al-Riba.png'){
+                Storage::delete('/public/posts-images/'.$post->image_path);
+                $this->post->find($id)->update($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
+            }
+            else{
+                $this->post->find($id)->update($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
+            }
         }
-
-        $this->post->find($id)->Update($request->all()+ ['image_path'=>$filename ?? $this->post->find($id)->image_path]);
 
         return redirect(route('posts.index'))->with('success', 'تم تعديل المنشور بنجاح');
     }

@@ -26,11 +26,13 @@ use App\Http\Controllers\PartnerController;
 //     return view('search');
 // })->name('search_item');
 Route::get('/', [PostController::class, 'index_blog'])->name('index_blog');
+Route::resource('/post', PostController::class);
+Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
 Route::get('/about-us', function () {
     return view('aboutus');
 })->name('about.us');
+Route::get('/page/{page}', [PageController::class, 'show'])->name('page.nav.show');
 
-Route::resource('/post', PostController::class);
 Route::post('/search', [PostController::class, 'search'])->name('search');
 Route::get('/category/{id}/{slug}', [PostController::class, 'getByCategory'])->name('category');
 
@@ -46,7 +48,7 @@ Route::get('user/{id}/comments', [UserController::class, 'getCommentsByUser'])->
 Route::group(['prefix' => 'admin',  'middleware' => 'Admin'], function() { 
     Route::get('/dashboard', [DashController::class, 'index'])->name('admin.dashboard');
     Route::resource('/category', CategoryController::class);
-    Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
+    
     Route::resource('/posts', 'App\Http\Controllers\admin\PostController');
     Route::resource('/role', RoleController::class);
     Route::get('/permission', [PermissionController::class, 'index'])->name('permissions');
@@ -63,6 +65,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
+    Route::resource('/post', PostController::class);
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');

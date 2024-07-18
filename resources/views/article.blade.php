@@ -4,10 +4,20 @@
         <div class="article-header">
             <div class="container">
                 @isset($post)
+                    @include('alerts.success')
                     <div class="header-category">
-                        <span class="me-1">تكنولوجيا</span> | <span class="ms-1">ميكروسوفت</span>
+                        <a href="{{ route('index_blog') }}">
+                            <span class="me-1">
+                                @if ($post->type == 1)
+                                    {{ __('منشورات') }}
+                                @elseif ($post->type == 2)
+                                    {{ __('مشاريع') }}
+                                @else
+                                    {{ __('اخبار') }}
+                                @endif  
+                            </span>
+                        </a> | <span class="ms-1">{{ $post->category->title }}</span>
                     </div>
-
                     <div class="header-title">
                         <h2>{{ $post->title }}</h2>
                     </div>

@@ -97,16 +97,20 @@ class PostController extends Controller
             'type' => 'required',
         ]);
 
+        $posts = Post::where('title', $request->title)->first();
+
         $data['slug'] = Slug::uniqueSlug($request->title,'posts');
         $data['category_id'] = $request->category_id;
 
         if($request->hasFile('image')) {
-            $file = $request->file('image');
-            $filename = time() . $file->getClientOriginalName();
-            $file->storeAs('public/posts-images/', $filename);
+            if($posts->image_path != 'Al-Riba.png'){
+                Storage::delete('/public/posts-images/'.$posts->image_path);
+                $request->user()->posts()->where('slug', $slug)->update($data + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
+            }
+            else{
+                $request->user()->posts()->where('slug', $slug)->update($data + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
+            }
         }
-
-        $request->user()->posts()->where('slug', $slug)->update($data + ['image_path'=> $filename ?? 'default.jpg']);
 
         return redirect(route('post.show', $data['slug']))->with('success', 'تم تعديل المنشور بنجاح');
     }
