@@ -58,7 +58,7 @@
         }
     </style>
     @yield('style')
-    @vite(['resources/js/app.js'])
+    {{-- @vite(['resources/js/app.js']) --}}
     @livewireStyles
 </head>
 
