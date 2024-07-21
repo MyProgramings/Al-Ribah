@@ -39,11 +39,11 @@ class PostController extends Controller
         if($request->hasFile('image')) {
             if($post->image_path != 'Al-Riba.png'){
                 Storage::delete('/public/posts-images/'.$post->image_path);
-                $this->post->find($id)->update($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
             }
-            else{
-                $this->post->find($id)->update($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
-            }
+            $this->post->find($id)->update($request->all() + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
+        }
+        else{
+            $this->post->find($id)->Update($request->all()+ ['image_path'=>$filename ?? $this->post->find($id)->image_path]);
         }
 
         return redirect(route('posts.index'))->with('success', 'تم تعديل المنشور بنجاح');
