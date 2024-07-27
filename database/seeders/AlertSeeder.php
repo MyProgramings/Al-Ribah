@@ -22,7 +22,7 @@ class AlertSeeder extends Seeder
         ]);
 
         $alert2 = Alert::create([
-            'user_id' => User::where('name', 'Hasan dani')->first()->id,
+            'user_id' => User::where('name', 'Mohamed Ali')->first()->id,
             'alert' => '1',
         ]);
 

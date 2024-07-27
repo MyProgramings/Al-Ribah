@@ -18,7 +18,7 @@ class CommentsSeeder extends Seeder
         DB::table('comments')->insert([
             'body' => "شكرًا جزيلًا",
             'post_id' => "1",
-            'user_id' => "2",
+            'user_id' => "1",
             'created_at' => "2022-05-10 11:44",
             'commentable_id' => "1",
             'commentable_type' => "App\Models\Post",
@@ -27,7 +27,7 @@ class CommentsSeeder extends Seeder
         DB::table('comments')->insert([
             'body' => "مقال مفيد",
             'post_id' => "1",
-            'user_id' => "3",
+            'user_id' => "2",
             'created_at' => "2022-04-22 11:44",
             'commentable_id' => "1",
             'commentable_type' => "App\Models\Post",

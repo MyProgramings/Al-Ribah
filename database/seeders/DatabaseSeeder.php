@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolesSeeder::class,
             UsersSeeder::class,
-            // CategoriesSeeder::class,
-            // PostSeeder::class,
+            CategoriesSeeder::class,
+            PostSeeder::class,
             PermissionsSeeder::class,
-            // CommentsSeeder::class,
-            // NotificationSeeder::class,
-            // AlertSeeder::class,
+            CommentsSeeder::class,
+            NotificationSeeder::class,
+            AlertSeeder::class,
             PartnerSeeder::class,
             PageSeeder::class,
         ]);

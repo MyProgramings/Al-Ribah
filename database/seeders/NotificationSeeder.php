@@ -33,7 +33,7 @@ class NotificationSeeder extends Seeder
 
         DB::table('notifications')->insert([
             'id' => 3,
-            'user_id' => 3,
+            'user_id' => 2,
             'post_id' => 4,
             'post_userId' => 2,
             'created_at' =>'2022-05-05 07:08:00',
