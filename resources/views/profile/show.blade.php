@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     <x-slot name="header">
         <h2 class="font-semibold text-xl leading-tight">
             {{ __('site.profile') }}
@@ -42,4 +43,4 @@
             @endif
         </div>
     </div>
-</x-app-layout>
+@endsection

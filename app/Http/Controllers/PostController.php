@@ -48,6 +48,9 @@ class PostController extends Controller
     public function create_by_type($id)
     {
         $post_type = $id;
+
+        abort_unless(auth()->user()->can('add-post', $this->post), 403);
+
         return view('posts.create', compact('post_type'));
     }
 
