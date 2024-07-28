@@ -65,7 +65,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::resource('/post', PostController::class);
+    // Route::resource('/post', PostController::class);
     // Route::get('/dashboard', function () {
     //     return view('dashboard');
     // })->name('dashboard');
