@@ -1,4 +1,4 @@
-<section class="videos" style="background-color: #f4f7eb">
+<section class="videos pb-0" style="background-color: #f4f7eb">
     <div class="container">
         <h2 class="section-title" style="color: #114f39">
             أحدث الأخبار
@@ -14,7 +14,7 @@
                                     <img src="{{ asset('/storage/posts-images/' . $post->image_path) }}" alt="...">
                                 </div>
                                 <div class="article-text">
-                                    <span class="article-category">
+                                    <span class="article-category me-1">
                                         {{ __('مشاريع') }}
                                     </span>
                                     <h5 class="article-title">{!! Str::limit($post->title, 70) !!}</h5>
