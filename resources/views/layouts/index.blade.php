@@ -15,7 +15,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet"
         integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU" crossorigin="anonymous">
-    <title>الربّة</title>
+    <title>{{ __('جمعية الربة التعاونية الزراعية / شبام') }}</title>
     <style>
         body {
             font-family: 'Cairo', sans-serif;
@@ -59,7 +59,6 @@
         }
     </style>
     @yield('style')
-    {{-- @vite(['resources/js/app.js']) --}}
     @livewireStyles
 </head>
 

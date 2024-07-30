@@ -111,7 +111,9 @@
                 <a href="index.html" class="footer-brand">الربّة</a>
             </div>
             <div class="copyright text-center mt-3">
-                جميع الحقوق محفوظة @ <span id="year"></span>
+                جميع الحقوق محفوظة @ <span id="year"></span><br>
+                Developed by BAAQAIL <span></span><br>
+                779941156 <span id="year"></span>
             </div>
         </div>
     </div>
