@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ __('جمعية الربة التعاونية الزراعية / شبام') }}</title>
         <link rel="icon" href="{!! asset('small_logo.png') !!}">
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
         <link rel="stylesheet" href="{{ asset('build/assets/app.bfe18480.css') }}">
         <script src="{{ asset('build/assets/app.ed79e0aa.js') }}"></script>
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
     </head>
     <body class="antialiased" dir="rtl">
         <x-jet-banner />
