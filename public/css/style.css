@@ -866,6 +866,9 @@ header .header-news .header-articles h1 {
   .logo-style {
     width: 14.375rem !important;
   }
+  header .header-news .header-articles {
+    text-align: center;
+  }
   .card-posts-body {
     padding: 10px 0 !important;
   }
