@@ -77,7 +77,7 @@
                     <input class="form-control" name="keyword" type="search" placeholder="ابحث عن..."
                         aria-label="Search">
                     <button type="submit" class="search-icon me-2" style="border: none; background: none;"><i
-                            class="fa-solid fa-magnifying-glass"></i></button>
+                            class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i></button>
                 </form>
                 <div class="topbar topbar-notification" style="z-index:1">
                     @auth
@@ -109,7 +109,7 @@
                 </div>
                 <div class="login">
                     @guest
-                        <i class="fa-solid fa-user m-0"></i>
+                        <i class="fa-solid fa-sign-in-alt m-0"></i>
                         <div class="login-container">
                             <a href="{{ route('login') }}" class="button">تسجيل الدخول</a>
                             <hr>
