@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ __('جمعية الربة التعاونية الزراعية / شبام') }}</title>
-        <link rel="icon" href="{!! asset('small_logo.png') !!}">
+        <link rel="icon" href="{!! asset('small_logo.webp') !!}">
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

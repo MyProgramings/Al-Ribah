@@ -16,43 +16,43 @@ class PartnerSeeder extends Seeder
     public function run()
     {
         DB::table('partners')->insert([
-            'image' => "1.png",
+            'image' => "1.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "2.png",
+            'image' => "2.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "3.png",
+            'image' => "3.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "4.png",
+            'image' => "4.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "5.png",
+            'image' => "5.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "6.png",
+            'image' => "6.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "7.png",
+            'image' => "7.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "8.png",
+            'image' => "8.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "9.png",
+            'image' => "9.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "10.png",
+            'image' => "10.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "11.png",
+            'image' => "11.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "12.png",
+            'image' => "12.webp",
         ]);
         DB::table('partners')->insert([
-            'image' => "13.png",
+            'image' => "13.webp",
         ]);
     }
 }

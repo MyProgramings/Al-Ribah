@@ -3,7 +3,7 @@
 @section('content')
     <header>
     </header>
-    <main style="background-image: url('images/Untitled-2.png');height: 650px;
+    <main style="background-image: url('images/Untitled-2.webp');height: 650px;
   /* background-attachment: fixed;   */
   background-size: cover;">
       <div class="container" style="margin-top: 40px;">

@@ -6,7 +6,7 @@
         <div class="card-news">
             <div class="row">
                 <div class="col-md-7">
-                    <img src="{{ asset('images/shibam1.png') }}" alt="...">
+                    <img src="{{ asset('images/shibam1.webp') }}" alt="...">
                 </div>
                 <div class="col-md-5">
                     <div class="card-text">
@@ -31,7 +31,7 @@
         </div>
         <div class="card-news">
             <div class="card-img">
-                <img src="{{ asset('images/ribah33.png') }}" alt="...">
+                <img src="{{ asset('images/ribah33.webp') }}" alt="...">
             </div>
             <div class="card-text">
                 <h2>الجمعية العمومية:</h2>
@@ -44,7 +44,7 @@
         <div class="card-news">
             <div class="row">
                 <div class="col-md-7">
-                    <img src="{{ asset('images/ribah11.png') }}" alt="...">
+                    <img src="{{ asset('images/ribah11.webp') }}" alt="...">
                 </div>
                 <div class="col-md-5">
                     <div class="card-text">

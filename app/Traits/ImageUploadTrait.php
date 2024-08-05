@@ -19,7 +19,7 @@ trait ImageUploadTrait
             $img = $img->resize($this->img_width, $this->img_height)->save(storage_path($this->image_path.'/'.$img_name));
         }
         else{
-            $img_name = 'Al-Riba.png';
+            $img_name = 'Al-Riba.webp';
         }
         return $img_name;
     }

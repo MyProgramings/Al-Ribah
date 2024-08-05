@@ -4,7 +4,7 @@
         <div class="container pb-5 vh-100 login_signup">
             <div class="row d-flex justify-content-center h-100 top_padding">
                 <div class="col-md-8 col-lg-7 col-xl-6">
-                    <img src="{{ asset('images/Al-Ribah_with_text.png') }}" alt="login" class="img-fluid">
+                    <img src="{{ asset('images/Al-Ribah_with_text.webp') }}" alt="login" class="img-fluid">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 

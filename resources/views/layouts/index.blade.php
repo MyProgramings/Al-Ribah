@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="تعاونية زراعية (متعددة االغراض)">
     <meta name="keywords" content="جمعية تعاونية زراعية, اليمن/حضرموت/شبام, زراعة, جمعية الربة التعاونية الزراعية, تعاونية زراعية, (متعددة االغراض), شبام التاريخية, الاراضي زراعية, مياه الفيضانات, الساقية الرئيسية, تحسين و تطوير نظام الري, مدينة شبام التاريخية, المحافظة على المدن التاريخية, الفيضانات, السيول, الموروث الزراعي, الجمعية العمومية, الواحات, منظمات المجتمع المدني, منظمة االتحاد التعاوني الزراعي اليمني, جمعيات مستخدمي المياه بالمديرية, الساقية الرئيسية, منشآت الري, منظمات الحفاظ على البيئة">
-    <link rel="icon" href="{!! asset('small_logo.png') !!}">
+    <link rel="icon" href="{!! asset('small_logo.webp') !!}">
     <link rel="stylesheet" href="{!! asset('css/style.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/article.css') !!}">
     <link rel="stylesheet" href="{!! asset('css/search.css') !!}">

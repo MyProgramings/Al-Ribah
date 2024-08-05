@@ -14,7 +14,7 @@
             <div class="col-lg-7">
                 <div class="header-articles header-articles-image">
                     <div class="header-articles header-articles-image">
-                        <img src="{{ asset('images/readys.png') }}" alt="...">
+                        <img src="{{ asset('images/readys.webp') }}" alt="...">
                     </div>
                 </div>
             </div>
