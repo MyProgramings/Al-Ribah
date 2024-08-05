@@ -6,8 +6,8 @@
         <div class="card-news">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{ asset('images/structure.png') }}" target="_blank">
-                        <img src="{{ asset('images/structure.png') }}" alt="...">
+                    <a href="{{ asset('images/structure.webp') }}" target="_blank">
+                        <img src="{{ asset('images/structure.webp') }}" alt="...">
                     </a>
                 </div>
             </div>

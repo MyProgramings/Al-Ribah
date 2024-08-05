@@ -106,7 +106,7 @@ class PostController extends Controller
         $data['category_id'] = $request->category_id;
 
         if($request->hasFile('image')) {
-            if($posts->image_path != 'Al-Riba.png'){
+            if($posts->image_path != 'Al-Riba.webp'){
                 Storage::delete('/public/posts-images/'.$posts->image_path);
                 $request->user()->posts()->where('slug', $slug)->update($data + ['image_path' => $this->uploadImage($request->image) ?? 'default.jpg']);
             }
@@ -122,7 +122,7 @@ class PostController extends Controller
     {
         $post = $this->post::find($id);
 
-        if ($post->image_path != 'Al-Riba.png')
+        if ($post->image_path != 'Al-Riba.webp')
             Storage::delete('/public/posts-images/'.$post->image_path);
         
         $post->delete();
