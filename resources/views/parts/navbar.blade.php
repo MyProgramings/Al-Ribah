@@ -7,7 +7,6 @@
                         class="fa-brands fa-facebook"></i></a>&nbsp&nbsp
                 <a href="https://www.instagram.com/alribbah/" class="text-white"><i
                         class="fa-brands fa-instagram"></i></a>&nbsp&nbsp
-                {{-- <a href="#" class="text-white"><i class="fa-brands fa-telegram"></i></a>&nbsp&nbsp --}}
                 <a href="https://chat.whatsapp.com/GVUxmP5dh6oHgUFwUO1tjQ" class="text-white"><i
                         class="fa-brands fa-whatsapp"></i></a>
             </p>
