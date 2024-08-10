@@ -7,10 +7,10 @@ use Livewire\Component;
 
 class PostComponent extends Component
 {
-    public $per_page = 5;
+    public $per_page = 8;
     public function load()
     {
-        $this->per_page += 5;
+        $this->per_page += 4;
     }
 
     public function render()
