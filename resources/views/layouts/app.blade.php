@@ -20,7 +20,7 @@
         </style>
         <!-- Styles -->
         @livewireStyles
-        <link rel="stylesheet" href="{{ asset('build/assets/app.bfe18480.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app.3cde43c7.css') }}">
         <script src="{{ asset('build/assets/app.ed79e0aa.js') }}"></script>
         <!-- Scripts -->
     </head>

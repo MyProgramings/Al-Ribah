@@ -16,11 +16,11 @@
                         <div class="row mx-1">
                             @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد منشورات'])
                             @include('data')
+                            <!-- Pagination -->
+                            <ul class="pagination mb-4">
+                                {{ $posts->links() }}
+                            </ul>
                         </div>
-                        <!-- Pagination -->
-                        <ul class="pagination mb-4">
-                            {{ $posts->links() }}
-                        </ul>
                     </div>
                 </div>
                 @include('parts.sidebar')
