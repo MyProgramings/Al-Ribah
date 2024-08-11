@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app.bfe18480.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app.3cde43c7.css') }}">
         <script src="{{ asset('build/assets/app.ed79e0aa.js') }}"></script>
     </head>
     <body>
