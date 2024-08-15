@@ -21,7 +21,6 @@ class PostController extends Controller
     {
         $this->post = $post;
         $this->partner = $partner;
-        // $this->middleware('verified')->only('create', 'create_by_type');
     }
 
     public function index()
