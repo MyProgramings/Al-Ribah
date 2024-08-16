@@ -19,7 +19,8 @@
                                 <tr>
                                     <td valign="bottom">
                                         <div class="user-info mr-3">
-                                            <img src="{{ $post_blog->user->profile_photo_url }}" style="width: 50px;" alt="...">
+                                            <img src="{{ $post_blog->user->profile_photo_url }}" style="width: 50px;"
+                                                alt="...">
                                             <span>{!! Str::limit($post_blog->user->name, 20) !!}</span>
                                         </div>
                                     </td>
