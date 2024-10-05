@@ -608,6 +608,10 @@ footer .social-media-icon {
 footer .social-media-icon a i{
   font-size: 40px;
 }
+footer .social-media-icon a img {
+  width: 40px;
+  vertical-align: top;
+}
 footer .social-media-icon img {
   width: 40px;
 }
