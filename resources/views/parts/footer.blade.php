@@ -88,8 +88,7 @@
             </h4>
             <ul class="social-media">
                 <li class="social-media-icon">
-                    <a href="https://x.com/JBshbam79597" style="color: #339dff"><i
-                            class="fa-brands fa-twitter"></i></a>&nbsp&nbsp
+                    <a href="https://x.com/JBshbam79597" style="color: #339dff"><img src="{{ asset('theme/img/twitter-x.png') }}" alt=""></a>&nbsp&nbsp
                 </li>
                 <li class="social-media-icon">
                     <a href="https://www.facebook.com/profile.php?id=61560878338105&mibextid=ZbWKwL"
