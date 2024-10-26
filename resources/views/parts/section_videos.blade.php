@@ -8,9 +8,9 @@
                 @includewhen(count($partners) == 0, 'alerts.empty', ['msg' => 'لا يوجد شركاء'])
                 @foreach ($partners as $partner)
                     <div class="swiper-slide">
-                            <div class="slide-img pb-3">
-                                <img src="{{ asset('/storage/companies/' . $partner->image) }}" alt="...">
-                            </div>
+                        <div class="slide-img pb-3">
+                            <img src="{{ asset('/storage/companies/' . $partner->image) }}" alt="...">
+                        </div>
                     </div>
                 @endforeach
             </div>

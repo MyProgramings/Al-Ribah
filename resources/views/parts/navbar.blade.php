@@ -2,7 +2,9 @@
     <div style="background-color: #114f39; padding: 2px 0;">
         <div class="container">
             <p style="float: left; color: white; margin: 0;">
-                <a href="https://x.com/JBshbam79597" class="text-white"><img src="{{ asset('theme/img/twitter-x-white.png') }}" style="width: 19px;" alt=""></a>&nbsp&nbsp
+                <a href="https://x.com/JBshbam79597" class="text-white"><img
+                        src="{{ asset('theme/img/twitter-x-white.png') }}" style="width: 19px;"
+                        alt=""></a>&nbsp&nbsp
                 <a href="https://www.facebook.com/profile.php?id=61560878338105&mibextid=ZbWKwL" class="text-white"><i
                         class="fa-brands fa-facebook"></i></a>&nbsp&nbsp
                 <a href="https://www.instagram.com/alribbah/" class="text-white"><i
