@@ -14,7 +14,7 @@
                                     {{ __('مشاريع') }}
                                 @else
                                     {{ __('اخبار') }}
-                                @endif  
+                                @endif
                             </span>
                         </a> | <span class="ms-1">{{ $post->category->title }}</span>
                     </div>

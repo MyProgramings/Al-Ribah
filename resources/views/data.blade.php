@@ -3,8 +3,7 @@
         <div class="card-body card-posts-body">
             <div class="row">
                 <div class="col-sm-1 photo-post">
-                    <img src="{{ $post->user->profile_photo_url }}" width="50px"
-                        class="rounded-circle" />
+                    <img src="{{ $post->user->profile_photo_url }}" width="50px" class="rounded-circle" />
                 </div>
                 <div class="col-sm-11 info-post">
                     <p class="m-0"><strong>{{ $post->user->name }}</strong>
