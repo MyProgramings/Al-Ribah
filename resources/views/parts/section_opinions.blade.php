@@ -9,8 +9,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 rounded">
                     <a href="{{ route('post.show', $post_blog->slug) }}">
                         <div class="opinions-card rounded">
-                            <table style="height: 100%;
-    border-collapse: collapse;">
+                            <table style="height: 100%;border-collapse: collapse;">
                                 <tr>
                                     <td valign="top">
                                         <h6>{!! Str::limit($post_blog->title, 55) !!}</h6>

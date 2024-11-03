@@ -24,9 +24,9 @@
         <ul class="list-group p-0">
             @foreach ($recent_comments as $comment)
                 <li class="list-group-item">
-                    <a href="{{ route('post.show', $comment->Post->slug) }}#comments" class="d-flex align-items-center"
-                        style="color: #114f39;">
-                        <img style="float:right; width: 40px;" src="{{ $comment->user->profile_photo_url }}"
+                    <a href="{{ route('post.show', $comment->Post->slug) }}#comments"
+                        class="d-flex align-items-center"style="color: #114f39;">
+                        <img style="float:right; width: 40px;"src="{{ $comment->user->profile_photo_url }}"
                             class="rounded-circle" />
                         <span class="mx-1 d-inline-block"><strong>{{ $comment->user->name }}</strong></span>
                         <span>{{ \Illuminate\Support\Str::limit($comment->body, 60) }}</span>
