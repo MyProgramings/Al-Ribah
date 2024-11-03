@@ -25,12 +25,14 @@ use App\Http\Controllers\PartnerController;
 // Route::get('/search_item', function () {
 //     return view('search');
 // })->name('search_item');
+
 Route::get('/', [PostController::class, 'index_blog'])->name('index_blog');
 Route::resource('/post', PostController::class);
 Route::get('create-new/{id}', [PostController::class, 'create_by_type'])->name('post.create.new');
 Route::get('/about-us', function () {
     return view('aboutus');
 })->name('about.us');
+
 Route::get('/page/{page}', [PageController::class, 'show'])->name('page.nav.show');
 
 Route::post('/search', [PostController::class, 'search'])->name('search');
