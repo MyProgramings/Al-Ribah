@@ -9,39 +9,46 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Post extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-    	'title','slug','body','image_path','approved', 'type', 'category_id','user_id'
-	];
-      
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+  protected $fillable = [
+    'title',
+    'slug',
+    'body',
+    'image_path',
+    'approved',
+    'type',
+    'category_id',
+    'user_id'
+  ];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+  public function user()
+  {
+    return $this->belongsTo(User::class);
+  }
 
-    public function comments()
-    {
-        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
-    }
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 
-    public function scopeApproved($query)
-	{
-    	return $query->whereApproved(1)->latest();
-	}
+  public function comments()
+  {
+    return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
+  }
 
-    protected function title(): Attribute
-    {
-      return Attribute::make(
-        set: fn ($value) => [
-          'title' => $value,
-          'slug' => Slug::uniqueSlug($value,'posts')
-        ],
-      );
-    }
+  public function scopeApproved($query)
+  {
+    return $query->whereApproved(1)->latest();
+  }
+
+  protected function title(): Attribute
+  {
+    return Attribute::make(
+      set: fn($value) => [
+        'title' => $value,
+        'slug' => Slug::uniqueSlug($value, 'posts')
+      ],
+    );
+  }
 }

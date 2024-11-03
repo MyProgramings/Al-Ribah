@@ -74,11 +74,13 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(Role::class);
     }
 
-    public function notifications() {
+    public function notifications()
+    {
         return $this->hasMany(Notification::class);
     }
 
-    public function alert() {
+    public function alert()
+    {
         return $this->hasOne(Alert::class);
     }
 
@@ -89,7 +91,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function hasAllow($permission)
     {
-        $role= $this->role()->first();
+        $role = $this->role()->first();
 
         return $role->permissions()->whereName($permission)->first() ? true : false;
     }
