@@ -4,7 +4,7 @@
             أحدث الأخبار
         </h2>
         <div class="swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" style="margin-bottom: 30px !important;">
                 @includewhen(count($posts) == 0, 'alerts.empty', ['msg' => 'لا توجد أخبار'])
                 @foreach ($posts as $post)
                     <div class="swiper-slide swiper-slide-news">
